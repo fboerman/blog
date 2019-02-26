@@ -1,5 +1,5 @@
 ---
-title: "Gesprekken met mijn oma: Pensioen Kosten"
+title: "Gesprekken met mijn oma: Pensioenkosten"
 date: 2019-02-24
 draft: false
 description: "Waarom aanpassingen in de AOW nodig zijn voor de toekomst"
@@ -11,7 +11,7 @@ Een van mijn statements van die zondag was dat het pensioenstelsel zoals die in 
 
 Even een kleine technische note om mee te beginnen. Alle cijfers in deze post komen van het [CSB statline](https://opendata.cbs.nl/statline/#/CBS/nl/) programma. Aangezien het CBS data over arbeidsdeelname pas sinds 1969 beschikbaar heeft starten alle grafieken vanaf daar en niet vanaf het begin van de AOW. Alle data is verwerkt in python, de source hiervan kan je vinden mijn github.
 
-## Pensien basis: de AOW
+## Pensioenbasis: de AOW
 Het pensioen stelsel in Nederland is vrij uitgebreid, maar om de trend te laten zien als argument beperk ik mij hier even tot de basis daarvan: de AOW. De Algemene Ouderdomswet (AOW) is in Nederland sinds 1956 de basis van de pensioenen. Het zorgt voor een basis pensioen voor iedereen boven de pensioens gerechtigde leeftijd, die op dat moment werd vastgesteld op 65. In 2012 werd dit door het toenmalig kabinet gewijzigd naar een oplopende leeftijd afhankelijk van je geboorte jaar, in reactie op het probleem wat ik ga beschrijven.
 
 De AOW wordt grotendeels gefinancierd door de AOW premies, deze worden betaald door iedereen in Nederland als onderdeel van de belastingen zolang je werkt. Mensen die AOW ontvangen dragen hier niet meer aan bij, wat dus heel kort door de bocht betekend dat mensen die op dit moment werken de AOW financieren van de mensen die op dit moment AOW ontvangen. Met andere woorden de huidige generatie betaald voor de generatie boven hen. Dit met het idee dat de generatie na hen hetzelfde zal doen voor hen. En hier zit dus de kern van het probleem.
