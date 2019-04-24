@@ -1,4 +1,4 @@
-baseURL = "https://fboerman.nl/"
+baseURL = "https://boerman.dev/"
 languageCode = "en-us"
 title = "Blog Frank Boerman"
 theme = "terminal"
