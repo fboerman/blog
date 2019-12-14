@@ -4,6 +4,9 @@ title = "Blog Frank Boerman"
 theme = "terminal"
 paginate = 5
 
+[markup.goldmark.renderer]
+# allow inclusion of html in posts. Its a personal blog that is statically compiled so its not needed to prevent this
+unsafe=true
 
 [params]
   # dir name of your blog content (default is `content/posts`)
@@ -21,9 +24,9 @@ paginate = 5
     subtitle = "Een verzameling aan gedachten"
     keywords = ""
     copyright = "Frank Boerman 2019"
-    menuMore = "Lees verder"
-    readMore = "Lees verder"
-    readOtherPosts = "Lees andere posts"
+    menuMore = "Read More"
+    readMore = "Read More"
+    readOtherPosts = "Read more posts"
 
     [languages.en.params.logo]
       logoText = "FBoerman"
