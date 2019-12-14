@@ -1,6 +1,6 @@
 ---
 title: "Graduation project part 1: Pulsars Stars"
-date: 2019-12-14
+date: 2019-12-13
 draft: false
 description: "In this series about my graduation project we start with pulsar stars and the problems observing them"
 ---
@@ -53,18 +53,18 @@ The result of this is that when looking at the magnitude of the received signal 
 
 # Frequency Dispersion model
 Before presenting the mathematical model of the frequency dispersion effect, we need to revisit the ISM and define some parameters for it. The ISM is not uniform, different paths from a pulsar to an observation point do not have the same effects. This is due to the different column density of free electrons along the travelled path by the signal. To model this effect there is the Dispersion Measure($DM$), defined as follows:  
-$$ DM=\int\_0^d\eta\_e(l)dl$$  
+$$ DM=\int\_0^d\eta\_e(l)dl \tag{1}$$  
 Here $\eta\_e(l)$ is the amount of electrons at a point along the path, $d$ the distance of the path and $l$ the path itself. This $DM$ is the parameter that will be used in the model of Frequency Dispersion in the ISM. It is not known a priori to an observation of a radio pulsar.  
 
 There are multiple ways to model the Frequency Dispersion in the ISM, of which two will be presented. These are tied to the two main algorithms of removing the dispersion, so called de-dispersion, whom will be presented in the next part in this series. These models both work with the concept of so called frequency channels. These are created by splitting the frequency spectrum into smaller bands of equal size. For example one of the largest projects in this field, the SKA [[wiki]](https://en.wikipedia.org/wiki/Square_Kilometre_Array), splits a bandwidth of 300 MHz into 4096 frequency channels for the SKA1-Mid system for pulsar search [7].
 
 In the first model for a channel between $f\_1 < f < f\_2$ the time delay of the arriving frequency channel can be described by:
-$$ \Delta t = 4.15\times{10}^{-6} \times DM \times (f_1^{-2} - f_2^{-2}) $$  
+$$ \Delta t = 4.15\times{10}^{-6} \times DM \times (f_1^{-2} - f_2^{-2}) \tag{2}$$  
 The second model describes the dispersion as a phase only filter in the following form in the frequency domain:  
-$$V(f_0+f)=V_{int}(f_0+f)\times H(f_0+f)$$  
+$$V(f_0+f)=V_{int}(f_0+f)\times H(f_0+f) \tag{3}$$  
 here $V(f)$ and $V_{int}(f_0+f)$ are the observed and emitted signals around a center $f_0$ and the filter transfer function $H(f)$.  
 This transfer function is then of the following form:  
-$$H(f+f_0) = exp\bigg[\dfrac{2 \pi \cdot i \cdot f^2 \cdot k_{DM} \cdot DM}{f_0^2(f+f_0)}\bigg]$$  
+$$H(f+f_0) = exp\bigg[\dfrac{2 \pi \cdot i \cdot f^2 \cdot k_{DM} \cdot DM}{f_0^2(f+f_0)}\bigg] \tag{4}$$  
 here $f_0$ is the center frequency of a frequency channel and $f$ is the frequency offset within the channel. $DM$ is the dispersion measure as discussed earlier and $k_{DM}$ is the measured constant of proportionality of the ISM model.
 Please note that these models follow the physics convention in terms of writing.  
 
