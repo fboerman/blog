@@ -7,7 +7,7 @@ Hallo ik ben Frank en welkom op mijn persoonlijke website! Een beetje over mezel
 
 Op deze website deel ik een verzameling van gedachtes en wat data onderzoeken die ik uit hobby interesse uitgevoerd heb.
 
-Mijn linkedin kan je [hier](https://www.linkedin.com/in/frank-boerman-477613164/) vinden en ik ben ook actief op meerdere plekken op github: [[1](https://github.com/fboerman/)] [[2](https://github.com/esdvfootloose/)] [[3](https://github.com/kolibrisolutions/)]
+Mijn linkedin kan je {{< ping_url url="https://www.linkedin.com/in/frank-boerman-477613164/" key="about_linkedin" text="hier" >}} vinden en ik ben ook actief op meerdere plekken op github: {{< ping_url url="https://github.com/fboerman/" key="about_gith_fboerman" text="[1]" >}} {{< ping_url url="https://github.com/esdvfootloose/" key="about_gith_esdv" text="[2]" >}} {{< ping_url  url="https://github.com/kolibrisolutions/" key="about_gith_kol" text="[3]" >}}
 
 Ik ben te bereiken op [frank@fboerman.nl](mailto:frank@fboerman.nl).
 

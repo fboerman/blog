@@ -9,6 +9,7 @@ paginate = 5
 unsafe=true
 
 [params]
+  ping = "https://ping.boerman.dev"
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
   # ["orange", "blue", "red", "green", "pink"]

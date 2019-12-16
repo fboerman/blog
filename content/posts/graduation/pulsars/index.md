@@ -77,3 +77,5 @@ Selecting the right $DM$ through many trails of de-dispersion in an efficient an
 
 # References
 {{< references_graduation_pulsars >}}
+
+{{< ping key="graduation_part1">}}

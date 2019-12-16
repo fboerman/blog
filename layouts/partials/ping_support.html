@@ -1,0 +1,11 @@
+<script>
+function send_ping(msg) {
+    
+    var request = new XMLHttpRequest();
+    request.open('POST', '{{ $.Site.Params.ping }}/?key=' + msg, false);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.send();
+    
+    return true;
+}
+</script>
