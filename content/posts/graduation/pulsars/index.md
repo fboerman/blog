@@ -13,17 +13,17 @@ These posts are subject to change while I work towards my final graduation and t
 This first part will go into the details behind the application that this project tackles: processing the signals of pulsar stars.
 
 # Pulsar Stars
-Radio Pulsars (or Pulsar Stars in popular culture) [[wiki]](https://en.wikipedia.org/wiki/Pulsar) are rapidly rotating heavily magnetised neutron stars. They are invisible to the naked eye, but can be discovered in telescope observations of the universe. In its most basic form they are a dense heavy neutron star, the exact composition being dependent on the equation of state, which is the relation between the density and pressure of matter composing the star.  
+Radio Pulsars (or Pulsar Stars in popular culture) [[wiki]](https://en.wikipedia.org/wiki/Pulsar) are rapidly rotating heavily magnetised neutron stars. They are invisible to the naked eye, but can be discovered in telescope observations of the universe. In its most basic form they are a dense heavy neutron star, the exact composition being dependent on the relation between the density and pressure of matter composing the star, which is called the equation of state.  
 Pulsars slowly lose rotation speed over time, this energy loss $\dot{E}$ is called the spin down luminosity. The bulk of this energy is lost due to magnetic dipole radiation and pulsar winds. Only a tiny fraction of $\dot{E}$ is actual radio emission, the type of energy that reaches our earth and can be observed by us [2].  
 Pulsar stars emit a beam of this radio transmission, which rotates around its axis in a circular fashion. These emissions are observed on our earth as (relative) short radio pulses. These radio pulses can be compared to the effect of light of a lighthouse near a harbour. A lighthouse emits a beam of light that is rotating. From a (relatively) fixed observation point, for example a ship, this is observed as a short light pulse that has a fixed period. For the human eye this is a blinking light.  
 Below is an artist impression of a pulsar star with its radiation beam.  
-{{<figure src="img/pulsar.png" caption="arist impression of a pulsar star" captionPosition="left" style="width:75%;">}}  
+{{<figure src="img/pulsar.png" caption="artist impression of a pulsar star" captionPosition="left" style="width:75%;">}}  
 From this artist impression an important property of the pulse signal can be seen. The angle of the radiation beam is not necessarily a multiple of 90 degrees, as depicted. Relatively with the observation point, in most cases our earth, this means that in the vast majority of cases you only observe one half of the beam. In other words in the pulse signal there is only one pulse per period of the pulsar star. This is important when interpreting the results.  
 
 The energy loss $\dot{E}$ causes a slow down of the spinning speed and thus an increase in the period of the pulse signal. However these phenomena are predictable and pulsars therefor have very precise timings. These timings can be used to study relativity theory as well as gravitational waves, relativity theory and many more other fundamental physics phenomena [2].
 
 # Pulsar Star Observation
-The radio signal of an observed pulse travels light years through space to reach our earth. On its way it encounters the InterStellar Medium (ISM) [[wiki]](https://en.wikipedia.org/wiki/Interstellar_medium). The ISM consist of cold ionised plasma and can be approximated with known transfer functions. The ISM acts on the signal with four distinct effects:
+The radio signal of an observed pulse travels light years through space to reach our earth. On its way it encounters the InterStellar Medium (ISM) [[wiki]](https://en.wikipedia.org/wiki/Interstellar_medium). The ISM consist of cold ionised plasma and can be approximated with known transfer functions from physics theory. The ISM acts on the signal with four distinct effects:
 
 * Frequency Dispersion
 
@@ -33,7 +33,7 @@ The radio signal of an observed pulse travels light years through space to reach
 
 * Scattering
 
-Of these frequency dispersion is dominant and the main focus of this project. For completeness the other three will be discussed shortly below. 
+Of these four aspects frequency dispersion is dominant and the main focus of this project. For completeness the other three will be discussed shortly below. 
 
 Faraday Rotation [[wiki]](https://en.wikipedia.org/wiki/Faraday_effect) is caused by differential phase rotation between left and right circular polarisation of the signal. In the ISM this is dependent on a scaled quadratic relation  to the wavelength of the light: $ \beta = RM \cdot \lambda^2 $, in which $\beta$ is the angle of rotation in radians, $RM$ is the Rotation Measure constant and $\lambda$ the wavelength.
 
@@ -42,17 +42,17 @@ Scintillation [[wiki]](https://en.wikipedia.org/wiki/Interplanetary_scintillatio
 Scattering [[wiki]](https://en.wikipedia.org/wiki/Scattering) is the effect in which radiation (such as the emission from pulsar stars) is changed direction due to non uniform effects of the medium it is passing through. In the ISM this is thus due to the changing density of the plasma. [4]  
 
 # Frequency Dispersion
-Frequency dispersion [[wiki]](https://en.wikipedia.org/wiki/Dispersion_relation) is the effect within  a signal that is composed of multiple frequencies (and thus wave length), these frequencies have different propagation speeds through a medium. In other words the different frequencies in the signal slowly shift in time.  
+Frequency dispersion [[wiki]](https://en.wikipedia.org/wiki/Dispersion_relation) is the effect within  a signal that is composed of multiple frequencies (and thus wave length), these frequencies have different propagation speeds through a non-vacuum medium. In other words the different frequencies in the signal slowly shift in time.  
 This effect can be observed with the naked eye with light, due to the fact that this effect results in a different refraction angle for specific wavelengths in certain materials. The best example of this is a dispersive prism, as show in the wiki article.  
 In pulsar signal observations this effect can be seen in the below figure, which is a real observation of a pulsar:  
 {{< image src="img/pulsar_observation.gif" position="center" >}}
 [[source]](http://www.jb.man.ac.uk/distance/frontiers/pulsars/section4.html)  
 Here repetitions of the observed pulse can be seen smeared out over the frequency spectrum in time. The arrival of different frequencies (the vertical axis) at different points in time (the horizontal axis, with as unit the pulsar period) is clearly visible.  
-The result of this is that when looking at the magnitude of the received signal at a telescope the pulse has been smeared out so much that it disappears into the noise floor. This can be seen in the below figure, which shows a simulated pulsar signal in green and the same signal after frequency dispersion applied in red. This is from simulated data.  
-{{< figure src="img/pulsar_signal_dispersed.svg" caption="magnitude of original and dispersed signal over time (simulated data)" >}}
+The result of this is that when looking at the magnitude of the received signal at a telescope the pulse has been smeared out so much that it disappears into the noise floor. This can be seen in the below figure, which shows an example pulsar signal in green and the same signal after frequency dispersion applied in red. This is from simulated data.  
+{{< figure src="img/pulsar_signal_dispersed.svg" caption="magnitude of original and dispersed signal over time" >}}
 
 # Frequency Dispersion model
-Before presenting the mathematical model of the frequency dispersion effect, we need to revisit the ISM and define some parameters for it. The ISM is not uniform, different paths from a pulsar to an observation point do not have the same effects. This is due to the different column density of free electrons along the travelled path by the signal. To model this effect there is the Dispersion Measure($DM$), defined as follows:  
+Before presenting the mathematical model of the frequency dispersion effect from theory, we need to revisit the ISM and define some parameters for it. The ISM is not uniform, different paths from a pulsar to an observation point do not have the same effects. This is due to the different column density of free electrons along the travelled path by the signal. To model this effect there is the Dispersion Measure($DM$), defined as follows:  
 $$ DM=\int\_0^d\eta\_e(l)dl \tag{1}$$  
 Here $\eta\_e(l)$ is the amount of electrons at a point along the path, $d$ the distance of the path and $l$ the path itself. This $DM$ is the parameter that will be used in the model of Frequency Dispersion in the ISM. It is not known a priori to an observation of a radio pulsar.  
 
