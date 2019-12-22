@@ -1,6 +1,6 @@
 ---
 title: "Graduation project part 1: Pulsars Stars"
-date: 2019-12-13
+date: 2019-12-17
 draft: false
 description: "In this series about my graduation project we start with pulsar stars and the problems observing them"
 ---
