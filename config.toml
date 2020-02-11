@@ -10,7 +10,7 @@ staticDir = ["static"]
 unsafe=true
 
 [params]
-#  ping = "http://localhost:5000"
+  #ping = "http://localhost:5000"
   ping = "https://ping.boerman.dev"
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
@@ -26,7 +26,7 @@ unsafe=true
     title = "FBoerman Blog"
     subtitle = "Een verzameling aan gedachten"
     keywords = ""
-    copyright = "Frank Boerman 2019"
+    copyright = "Frank Boerman 2019-2020"
     menuMore = "Read More"
     readMore = "Read More"
     readOtherPosts = "Read more posts"
