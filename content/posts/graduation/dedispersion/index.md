@@ -3,6 +3,7 @@ title: "Graduation project part 2: De-Dispersion"
 date: 2019-12-22
 draft: false
 description: "In part 2 of the series about my graduation project we dive into the algorithms of de-dispersion"
+scientific: true
 ---
 
 # Introduction
@@ -15,10 +16,7 @@ The two models presented in part 1 with equation (2) and (4) can each be used as
 In the first method (so called in-coherent de-dispersion) the time shift per frequency channel is calculated with (2). Then this time shift is applied to the whole channel time series. This successfully removes the dispersion between the channels. The advantage of this method is that it has a relatively low computational intensity, which is an important factor due to the scale of pulsar observations. The disadvantage of this is that only the dispersion *between* the channels is negated, but there is still dispersion left *within* the channel. Especially for low frequencies and/or high $DM$'s this dispersion can still be very significant [1].  
 
 In the second method (so called coherent de-dispersion) the transfer function of (4) is used. Here the input signal is convolved in the time domain with the inverse of the transfer function (4). Since this is a phase only filter this convolution needs to be done on the complex input signal, so before the traditional squaring of the signal done by telescope systems, due to needing the phase information. Using the Convolution theorem [[wiki]](https://en.wikipedia.org/wiki/Convolution_theorem) convolution in the time domain is element wise multiplication in the frequency domain. So the high level flow of coherent de-dispersion then becomes:
-<div class="mermaid">
-graph LR;
-    A["input signal"] --> B["conversion to<br/> frequency domain"] --> C["multiply with $H(f)^{-1}$"] --> D["conversion to <br/> time domain"]
-</div>
+{{< figure src="img/dedispersionflow.svg" caption="Coherent de-dispersion flow diagram" >}}
 In general coherent de-dispersion is more computational and hardware intensive. Both in higher data rate due to needing the full complex signal, as well as computational intensity due to using convolution instead of simple multiplication in time domain.
 
 # Pulsar search

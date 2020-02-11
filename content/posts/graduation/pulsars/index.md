@@ -3,6 +3,7 @@ title: "Graduation project part 1: Pulsars Stars"
 date: 2019-12-17
 draft: false
 description: "In this series about my graduation project we start with pulsar stars and the problems observing them"
+scientific: true
 ---
 # Introduction
 
@@ -42,7 +43,7 @@ Scintillation [[wiki]](https://en.wikipedia.org/wiki/Interplanetary_scintillatio
 Scattering [[wiki]](https://en.wikipedia.org/wiki/Scattering) is the effect in which radiation (such as the emission from pulsar stars) is changed direction due to non uniform effects of the medium it is passing through. In the ISM this is thus due to the changing density of the plasma. [4]  
 
 # Frequency Dispersion
-Frequency dispersion [[wiki]](https://en.wikipedia.org/wiki/Dispersion_relation) is the effect within  a signal that is composed of multiple frequencies (and thus wave length), these frequencies have different propagation speeds through a non-vacuum medium. In other words the different frequencies in the signal slowly shift in time.  
+Frequency dispersion [[wiki]](https://en.wikipedia.org/wiki/Dispersion_relation) is the effect in which signals with different wavelength have different propagation speeds through a non-vacuum medium. When a signal composed of multiple frequencies (and thus wavelengths) is transmitted through this medium, the different frequencies \textit{within} the signal will slowly shift in time from each other.
 This effect can be observed with the naked eye with light, due to the fact that this effect results in a different refraction angle for specific wavelengths in certain materials. The best example of this is a dispersive prism, as show in the wiki article.  
 In pulsar signal observations this effect can be seen in the below figure, which is a real observation of a pulsar:  
 {{< image src="img/pulsar_observation.gif" position="center" >}}

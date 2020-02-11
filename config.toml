@@ -3,12 +3,14 @@ languageCode = "en-us"
 title = "Blog Frank Boerman"
 theme = "terminal"
 paginate = 5
+staticDir = ["static"]
 
 [markup.goldmark.renderer]
 # allow inclusion of html in posts. Its a personal blog that is statically compiled so its not needed to prevent this
 unsafe=true
 
 [params]
+#  ping = "http://localhost:5000"
   ping = "https://ping.boerman.dev"
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
