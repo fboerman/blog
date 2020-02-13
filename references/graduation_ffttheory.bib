@@ -1,0 +1,203 @@
+@article{fft_cooley_tukey,
+ ISSN = {00255718, 10886842},
+ URL = {http://www.jstor.org/stable/2003354},
+ author = {James W. Cooley and John W. Tukey},
+ journal = {Mathematics of Computation},
+ number = {90},
+ pages = {297--301},
+ publisher = {American Mathematical Society},
+ title = {An Algorithm for the Machine Calculation of Complex Fourier Series},
+ volume = {19},
+ year = {1965}
+}
+
+@book{oppenheim_dsp,
+  author = {Oppenheim, Alan V. and Schafer, Ronald W. and Buck, John R.},
+  edition = {Second},
+  keywords = {dft dsp hilbert oppenheim signal.processing textbook},
+  publisher = {Prentice-hall Englewood Cliffs},
+  title = {Discrete-Time Signal Processing},
+  year = 1999
+}
+
+@INPROCEEDINGS{mookherjee_radix_4_par,
+author={S. {Mookherjee} and L. {DeBrunner} and V. {DeBrunner}},
+booktitle={2014 48th Asilomar Conference on Signals, Systems and Computers},
+title={A high throughput and low power radix-4 FFT architecture},
+year={2014},
+volume={},
+number={},
+pages={1266-1270},
+keywords={fast Fourier transforms;field programmable gate arrays;low-power electronics;pipeline arithmetic;high-throughput low-power radix-4 FFT architecture;FFT processor;high-performance application;low-power application;pipelined multipath delay commutators;MDC;datapaths;hardware utilization;power consumption;Xilinx FPGA Virtex 5;area factor;throughput factor;Computer architecture;Throughput;Hardware;Delays;Power demand;Field programmable gate arrays;Complexity theory;FFT;DIF;DSP;R4MDC;2-parallel},
+doi={10.1109/ACSSC.2014.7094663},
+ISSN={1058-6393},
+month={Nov},}
+
+@misc{utwente_fft,
+           month = {December},
+           title = {A comparison of FFT processor designs},
+          author = {S. {Dirlik}},
+            year = {2013},
+             url = {http://essay.utwente.nl/72179/},
+        abstract = {ASTRON is the Netherlands Institute for Radio Astronomy. They operate, among others, LOFAR (Low
+Frequency Array), which is a radio telescope using a concept based on a large array of omni-directional antennas.
+The signals from these antennas go through various processing units, one of which is an FFT processor.
+In the current LOFAR design, FPGAs are used for this, since the numbers are too small to a?ord custom
+chips. For future astronomical applications, especially for the SKA telescope, a more speci?c chip solution is
+desired. SKA will be much larger than LOFAR and use many more processing elements. As power consumption
+is a major concern, the FPGAs are unsuitable and they need to be replaced with ASICs.
+The energy consumption of the FPGAs is compared to the energy comsumption of the same FFT design
+implemented on an ASIC. For the FPGA synthesis and power calculation, Quartus is used. The ASIC was
+synthesized with Synopsys Design Compiler using 65nm technology. The energy usage is reduced from 0.84?J
+per FFT on the FPGA to 0.41?J per FFT on the ASIC.
+Four new ASIC designs are compared to the existing one, in search of a better solution. An approach that
+uses the minimal amount of memory (SDF), and one that uses more memory for faster calculation (MDC)
+are implemented for both radix-2 and radix-4 designs. Di?erent complex multipliers and di?erent methods of
+storing the twiddle factors are also compared.
+The fast calculating radix-2 design gives the best results. Combined with a complex multiplier that uses
+Gauss' complex multiplication algorithm and a twiddle factor component based on registers, the energy comsumption
+per FFT can be reduced to 0.33?J.}
+}
+
+@ARTICLE{garrido_architecture_par,
+author={M. {Garrido} and J. {Grajal} and M. A. {Sanchez} and O. {Gustafsson}},
+journal={IEEE Transactions on Very Large Scale Integration (VLSI) Systems},
+title={Pipelined Radix-$2^{k}$ Feedforward FFT Architectures},
+year={2013},
+volume={21},
+number={1},
+pages={23-32},
+doi={10.1109/TVLSI.2011.2178275},
+ISSN={1557-9999},
+month={Jan},}
+
+@ARTICLE{garrido_1M,
+author={H. {Kanders} and T. {Mellqvist} and M. {Garrido} and K. {Palmkvist} and O. {Gustafsson}},
+journal={IEEE Transactions on Circuits and Systems I: Regular Papers},
+title={A 1 Million-Point FFT on a Single FPGA},
+year={2019},
+volume={66},
+number={10},
+pages={3863-3873},
+keywords={circuit feedback;fast Fourier transforms;field programmable gate arrays;logic design;reconfigurable architectures;multiple interconnected FPGAs;million-point rotator;1 million-point FFT;single FPGA;single field-programmable gate array;1 million-point fast Fourier transform;pipelined single-delay feedback FFT;SDF FFT;signal-to-quantization-noise ratio;SQNR;low power consumption;1 million-point rotator;size 1000000.0 A;Binary trees;Field programmable gate arrays;Delays;Discrete Fourier transforms;Fast Fourier transforms;Integrated circuit interconnections;Binary tree;Cooley-Tukey;fast Fourier transform (FFT)},
+doi={10.1109/TCSI.2019.2918403},
+ISSN={1558-0806},
+month={Oct},}
+
+@INPROCEEDINGS{lee_MDF,
+author={ {Hang Liu} and {Hanho Lee}},
+booktitle={APCCAS 2008 - 2008 IEEE Asia Pacific Conference on Circuits and Systems},
+title={A high performance four-parallel 128/64-point radix-24 FFT/IFFT processor for MIMO-OFDM systems},
+year={2008},
+volume={},
+number={},
+pages={834-837},
+keywords={digital arithmetic;fast Fourier transforms;field programmable gate arrays;logic design;MIMO communication;OFDM modulation;pipeline processing;4-parallel data-path pipelined 128/64- point MDF FFT/IFFT processor;high-throughput MIMO-OFDM system;high radix-24 multipath delay feedback;hardware complexity;four-parallel data-path scheme;Xilinx Virtex-4 FPGA;orthogonal frequency division multiplexing;frequency 140 MHz;Hardware;Throughput;MIMO;Delay;Costs;Transceivers;OFDM;Field programmable gate arrays;Bandwidth;Fading},
+doi={10.1109/APCCAS.2008.4746152},
+ISSN={null},
+month={Nov},}
+
+@ARTICLE{wang_MDF,
+author={J. {Wang} and C. {Xiong} and K. {Zhang} and J. {Wei}},
+journal={IEEE Transactions on Very Large Scale Integration (VLSI) Systems},
+title={A Mixed-Decimation MDF Architecture for Radix- $2^{k}$ Parallel FFT},
+year={2016},
+volume={24},
+number={1},
+pages={67-78},
+keywords={delays;digital arithmetic;fast Fourier transforms;mixed-decimation MDF architecture;radix-2k parallel FFT;mixed-decimation multipath delay feedback;M2DF design;MDF scheme;radix-2k fast Fourier transform;arithmetic modules;decimation-in-time operations;decimation-in-frequency-operated computing units;multipath delay commutator scheme;MDC scheme;arithmetic resources utilization;Hardware;Computer architecture;Delays;Discrete Fourier transforms;Pipelines;Algorithm design and analysis;Very large scale integration;Decimation-in-frequency (DIF);decimation-in-time (DIT);fast Fourier transform (FFT);multipath delay feedback (MDF);pipelined-parallel architecture.;Decimation-in-frequency (DIF);decimation-in-time (DIT);fast Fourier transform (FFT);multipath delay feedback (MDF);pipelined-parallel architecture},
+doi={10.1109/TVLSI.2015.2402207},
+ISSN={1557-9999},
+month={Jan},}
+
+@ARTICLE{wang_SDC,
+author={Z. {Wang} and X. {Liu} and B. {He} and F. {Yu}},
+journal={IEEE Transactions on Very Large Scale Integration (VLSI) Systems},
+title={A Combined SDC-SDF Architecture for Normal I/O Pipelined Radix-2 FFT},
+year={2015},
+volume={23},
+number={5},
+pages={973-977},
+keywords={adders;circuit feedback;delay circuits;digital arithmetic;digital signal processing chips;fast Fourier transforms;logic design;multiplying circuits;combined SDC-SDF architecture;single-path delay commutator;single-path delay feedback;SDC-SDF architectures;radix-2 pipelined fast Fourier transform architecture;I-O pipelined radix-2 FFT;SDC stages;SDC processing engine;SDF stage;hardware resource utilization;arithmetic resource;adders;multipliers;delay memory;Computer architecture;Adders;Delays;Very large scale integration;Program processors;Pipelines;Multiplexing;Fast Fourier transform (FFT);pipelined architecture;single-path delay communicator processing engine (SDC PE).;Fast Fourier transform (FFT);pipelined architecture;single-path delay communicator processing engine (SDC PE)},
+doi={10.1109/TVLSI.2014.2319335},
+ISSN={1557-9999},
+month={May},}
+
+@INPROCEEDINGS{yang_MDC,
+author={J. {Yang} and D. {Zhang} and Y. {Gong} and B. {Liu}},
+booktitle={2016 International Conference on Cyber-Enabled Distributed Computing and Knowledge Discovery (CyberC)},
+title={A Novel Design of Pipeline MDC-FFT Processor Based on Various Memory Access Mechanism},
+year={2016},
+volume={},
+number={},
+pages={62-65},
+keywords={digital arithmetic;fast Fourier transforms;field programmable gate arrays;Long Term Evolution;microprocessor chips;OFDM modulation;parallel architectures;pipeline processing;read-only storage;standards;pipeline MDC-FFT processor;memory access mechanism;multipath delay commutator architecture FFT processor;rotation factor ROM;OFDM systems;radix-2 FFT;radix-22 FFT;pipeline architecture;hybrid FFT algorithm;FPGA;LTE-A standard;RF-ROM;Radio frequency;Hardware;Computer architecture;Pipelines;OFDM;Radiation detectors;Throughput;MDC-FFT;pipeline processor;memory access mechanism;scalable architecture},
+doi={10.1109/CyberC.2016.20},
+ISSN={null},
+month={Oct},}
+
+@INPROCEEDINGS{mookherjee_radix2_par,
+author={S. {Mookherjee} and L. {DeBrunner} and V. {DeBrunner}},
+booktitle={2015 49th Asilomar Conference on Signals, Systems and Computers},
+title={A low power radix-2 FFT accelerator for FPGA},
+year={2015},
+volume={},
+number={},
+pages={447-451},
+keywords={digital arithmetic;digital signal processing chips;fast Fourier transforms;field programmable gate arrays;low-power electronics;low power radix-2 FFT accelerator;radix-2 algorithm;8-parallel multipath delay commutator;hardware accelerators;software FFT routines;DSP processors;radix-2 multipath delay commutator FFT accelerator;R2MDC FFT accelerator;8-parallel processing;hardware utilization;parallel butterflies;clock frequency;MDC accelerator;gate capacitance;Xilinx Virtex FPGA;area measurement;frequency measurement;latency measurement;throughput measurement;power measurement;fast Fourier transform;field programmable gate array;Computer architecture;Hardware;Throughput;Delays;Clocks;OFDM;Field programmable gate arrays;FFT;DIF;DSP;R2MDC;8-parallel;accelerator},
+doi={10.1109/ACSSC.2015.7421167},
+ISSN={1058-6393},
+month={Nov},}
+
+@ARTICLE{garrido_100GS,
+author={M. {Garrido} and K. {Möller} and M. {Kumm}},
+journal={IEEE Transactions on Circuits and Systems I: Regular Papers},
+title={World’s Fastest FFT Architectures: Breaking the Barrier of 100 GS/s},
+year={2019},
+volume={66},
+number={4},
+pages={1507-1516},
+keywords={adders;fast Fourier transforms;field programmable gate arrays;logic design;FFT algorithm;resource utilization;advanced shift;suitable FFT algorithms;FFT size;input word length;FFT calculation;Throughput;Hardware;Adders;Pipeline processing;Delays;Discrete Fourier transforms;Tools;Fast Fourier transform (FFT);fully parallel;pipelined architecture},
+doi={10.1109/TCSI.2018.2886626},
+ISSN={1558-0806},
+month={April},}
+
+@ARTICLE{50yearscordic,
+author={P. K. {Meher} and J. {Valls} and T. {Juang} and K. {Sridharan} and K. {Maharatna}},
+journal={IEEE Transactions on Circuits and Systems I: Regular Papers},
+title={50 Years of CORDIC: Algorithms, Architectures, and Applications},
+year={2009},
+volume={56},
+number={9},
+pages={1893-1907},
+keywords={digital arithmetic;signal processing;CORDIC algorithms;coordinate rotation digital computer;shift-add operations;trigonometric functions;hyperbolic functions;logarithmic functions;linear systems;eigenvalue estimation;singular value decomposition;QR factorization;Computer architecture;Application software;Lifting equipment;Linear systems;Eigenvalues and eigenfunctions;Singular value decomposition;Signal processing;Image processing;Robot kinematics;Graphics;Arithmetic circuits;CORDIC;CORDIC algorithms;digital signal processing chip;VLSI},
+doi={10.1109/TCSI.2009.2025803},
+ISSN={1558-0806},
+month={Sep.},}
+
+
+@INPROCEEDINGS{VSFCORDIC,
+author={Y. {Xue} and Z. {Ma}},
+booktitle={2019 IEEE 4th International Conference on Signal and Image Processing (ICSIP)},
+title={Design and Implementation of an Efficient Modified CORDIC Algorithm},
+year={2019},
+volume={},
+number={},
+pages={480-484},
+keywords={digital arithmetic;field programmable gate arrays;iterative methods;signal processing;VSF CORDIC algorithm;coordinate rotation digital computer algorithm;hardware implementation;digital signal processing algorithms;efficient modified CORDIC algorithm;mathematical operations;conventional CORDIC algorithm;cyclone IV FPGA;hardware resource consumption;Signal processing algorithms;Computer architecture;Hardware;Mathematical model;Field programmable gate arrays;Upper bound;Convergence;CORDIC algorithm;Scaling-Free;FPGA},
+doi={10.1109/SIPROCESS.2019.8868732},
+ISSN={null},
+month={July},}
+
+@ARTICLE{garrido_CORDIC,
+author={M. {Garrido} and P. {Källström} and M. {Kumm} and O. {Gustafsson}},
+journal={IEEE Transactions on Circuits and Systems II: Express Briefs},
+title={CORDIC II: A New Improved CORDIC Algorithm},
+year={2016},
+volume={63},
+number={2},
+pages={186-190},
+keywords={digital arithmetic;CORDIC II;rotation angle;Kernel;Adders;Hardware;Signal processing algorithms;Convergence;Multiplexing;CORDIC;rotation;friend angles;USR;CORDIC;nano-rotation;CORDIC;friend angles;nanorotation;rotation;uniformly scaled redundant (USR) CORDIC},
+doi={10.1109/TCSII.2015.2483422},
+ISSN={1558-3791},
+month={Feb},}

@@ -108,8 +108,7 @@ Now that the high level overview of the algorithm is clear, the details can be f
 * saving the output data
 
 Due to the fact that coherent de-disperion moves the problem largely to the frequency domain, the FFT becomes dominant in the complexity of the implementation work. Therefor the next parts of this series will focus on what turned out to be the largest part of the implementation: the FFT.  
-For this a pipelined radix-$2^2$ feedforward architecture is selected, presented in [7]. An analyses on why this is a good candidate is explained in the next part of this series. Furthermore the next part will go into detail of how this architecture works and how it is implemented in a dataflow programming model, as well as presenting simulation of these models to verify its correctness.
-
+In the next part the relevant mathimatical theory for the FFT is discussed and  a pipelined radix-$2^2$ feedforward architecture is selected, presented in [7]. An analyses on why this is a good candidate is also explained in the next part. 
 
 # References
 {{< references_graduation_dedispersion >}}
