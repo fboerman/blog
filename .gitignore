@@ -3,3 +3,4 @@ tikz/*.log
 tikz/*.aux
 tikz/*.pdf
 tikz/*.svg
+.hugo_build.lock
