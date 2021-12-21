@@ -14,6 +14,6 @@ It is calculated by subtracting the minimum price from the maximum price  to get
 The current market developments of high prices and high volatility also has an effect on the price convergence. As can be seen the last two months there is a high percentage of high non convergence. Which raises an interesting question, is this a temporary unique situation due to high fuel prices, or does it show shortcomings in the current market design?
 
 
-{{< linkedin url="" >}}
+{{< linkedin url="https://www.linkedin.com/posts/frank-boerman-477613164_energy-electricitymarkets-electricity-activity-6879023063611002880-AcMh" >}}
 
 {{< ping key="aten2" >}}
