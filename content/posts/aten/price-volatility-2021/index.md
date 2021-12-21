@@ -2,18 +2,18 @@
 title: "Aten: introduction and the first plot"
 date: 2021-12-13
 draft: false
-description: "Introduciton of my new personal project Aten and a plot about price volatility in the energy day ahead market"
+description: "Introduction of my new personal project Aten and a plot about price volatility in the energy day ahead market"
 ---
-As those that I have spoken with personally recently are well aware by now, I am working at TenneT at the System Operation Transport division, mainly in flowbased capacity calculation and bidding zone review topics. I have chosen TenneT because I wanted to play a part in something that both fascinates my and in which I hope to make a small difference for good: the energytransition and the energy market.  
-The more I work in it the more I become fascinated by all the intricate details and endless possiblities to analyse it, encouraged by my helpfull co-workers. From this fascination a new hobby was born: project Aten. I like to name my projects after greek-roman, old norse or ancient egyptian mythology and this one is named after the [egyptian sungod Aten](https://en.wikipedia.org/wiki/Aten).
+As those that I have spoken with personally recently are well aware by now, I am working at TenneT at the System Operation Transport division, mainly on flowbased capacity calculation and bidding zone review topics. I have chosen TenneT because I wanted to play a part in something that both fascinates my and in which I hope to make a small difference for good: the energytransition and the energy market.  
+The more I work on it the more I become fascinated by all the intricate details and endless possibilities to analyse it, encouraged by my helpful co-workers. From this fascination a new hobby was born: project Aten. I like to name my projects after greek-roman, old norse or ancient egyptian mythology and this one is named after the [egyptian sungod Aten](https://en.wikipedia.org/wiki/Aten).
 
 ### Project Aten: What is it?
-Project Aten is a data lake and visualization platform that I am building with all kinds of data from the energy market and energy transition that I find interesing. I am trying to look at both the market part of it (for example day ahead prices) as well as the capacity calculation part (for example the flowbased capacity domain). It is purely a personal project and will only consist of publically available data, but ideas can (and probably will) come from from my work at TenneT.   
+Project Aten is a data lake and visualization platform that I am building with all kinds of data from the energy market and energy transition that I find interesting. I am trying to look at both the market part of it (for example day ahead prices) as well as the capacity calculation part (for example the flowbased capacity domain). It is purely a personal project and will only consist of publicly available data, but ideas can (and probably will) come from from my work at TenneT.   
 The pipeline of the project will be roughly: data ingestion with python -> PostgreSQL database -> plotting with grafana dashboard or a python plotting library -> live dashboards and occasional LinkedIn posts.  
 On top of that I will try to make all underlying aggregated data available in the form of an API.  
 
 ### Enough talk, show me!
-There will be three places of output from this project. First the public dashboards can be viewed at [data.boerman.dev](https://data.boerman.dev/). Secondly the API is available at [aten.boerman.dev](https://aten.boerman.dev/). Lastly, and probably the most visible, I will write occasional LinkedIn posts with attached blog post like these with some more information, you can find (and connect/follow) my profile [here](https://www.linkedin.com/in/frank-boerman-477613164/).
+There will be three places of output from this project. First, the public dashboards can be viewed at [data.boerman.dev](https://data.boerman.dev/). Secondly, the API is available at [aten.boerman.dev](https://aten.boerman.dev/). Lastly, and probably the most visible, I will write occasional LinkedIn posts with attached blog post like these with some more information, you can find (and connect/follow) my profile [here](https://www.linkedin.com/in/frank-boerman-477613164/).
 
 ### I have a visualization suggestion!
 Great! I always love getting feedback. Be sure to let me know either on LinkedIn (in a post comment or private message) or send me an email, my address can be found [here](https://boerman.dev/contact/).
