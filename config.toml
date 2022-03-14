@@ -23,10 +23,10 @@ unsafe=true
 
   [languages]
   [languages.en]
-    title = "FBoerman Blog"
-    subtitle = "Een verzameling aan gedachten"
+    title = "FJL Boerman Blog"
+    subtitle = "A gathering of thoughts and personal projects"
     keywords = ""
-    copyright = "Frank Boerman 2019-2020"
+    copyright = "Frank Boerman 2019-2022"
     menuMore = "Read More"
     readMore = "Read More"
     readOtherPosts = "Read more posts"
@@ -42,7 +42,7 @@ unsafe=true
         url = "/"
       [[languages.en.menu.main]]
         identifier = "1. About"
-        name = "1. Over Mij"
+        name = "1. About Me"
         url = "/about"
       [[languages.en.menu.main]]
         identifier = "2. Contact"
