@@ -40,6 +40,9 @@ This effect becomes clear when we plot the price delta on the Belgian border tow
 {{< figure src="NL-BE_Pdelta_FR_BE_1080p.png" caption="border trade utilization for border NL -> BE with price delta BE (click to enlarge)" clickable="true" >}}
 Here the non intuitive flows (blue bars) clearly line up with high peaks of the $\Delta P$. Thus it seems the market algorithm has allocated flows going from $NL\rightarrow BE\rightarrow FR$. That explains the non intuitive flow pattern on the Dutch Belgium border. A beautiful example of the advantages of optimizing on a larger area specifically and the advantages of the European market integration project in general!
 
+{{< linkedin url="https://www.linkedin.com/posts/frank-boerman-477613164_recently-there-were-quite-some-electricity-activity-6910127717778665473-2dWQ?utm_source=linkedin_share&utm_medium=member_desktop_web" >}}
+
+
 ## Utilization methodology technical remarks
 There are some limitations to our method of defining an utilization.  
 Comparing maxbex with scheduled exchanges is a bit comparing apples with oranges:
