@@ -9,7 +9,7 @@ scientific: true
 The recent market developments put the spot light on all kinds of interesting behaviour of the way European electricity market works. One of those is non intuitive flows. At 4th November 2020 the electricity day ahead market value broke a fundamental rule: allocation of cross border flows was no longer restricted to go from a low price zone to a high price zone. Flows from a low to a  high price zone are called intuitive, since it is intuitive that exporting from a low price to high price will average out the final price between the zones and maximize global welfare.  
 However this is not always the best optimization. Sometimes the optimal approach is to allocate a flow from a high to a low price zone (also known as non intuitive flows). For example if it makes capacity available for a flow from a low price zone to a high price zone on a different border.   
 Another example is when a flow goes from a high price zone to a low price zone to an even higher price zone. 
-Non intuitive optimization was enabled for the first time to optimize the integration process within the European electricity market. 
+Non intuitive optimization was enabled for the first time to optimize the integration process within the European electricity market at the 4th of november 2020. 
 
 Side note: A more ellaborate explanation of flowbased flows can be found on [energeia (subscription needed)](https://energeia.nl/trilemma/40090522/evolutie-in-flow-based-marktkoppeling-kan-voor-verrassingen-zorgen), written by my colleague Joost Greunsven. 
 
@@ -18,7 +18,7 @@ So how many times do these flows occur in practise? And how large are they are r
 ## Border flow utilization
 To more easily compare border flows on different timestamps, we define a border flow utilization percentage. This is a percentage indicating the share a commercial scheduled flows ($F_{scheduled}$) takes on the maximum possible exchange between two zones ($bex_{max}$) per hour.
 
-Mathematically, the utilization of cross boarder forecast is then defined as follows, for for example the border direction $NL \rightarrow BE$ :
+Mathematically, the utilization of cross border flows is then defined as follows, for for example in the direction $NL \rightarrow BE$ :
 $$ F^{NL \rightarrow BE}\_{util} = \dfrac{F^{NL \rightarrow BE}\_{scheduled}}{bex^{NL \rightarrow BE}\_{max}}*100 [\\%] \tag{1}  $$
 With:
 * $F^{NL \rightarrow BE}\_{util}$ as the utilization [%]
