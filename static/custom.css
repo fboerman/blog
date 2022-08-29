@@ -21,3 +21,8 @@
     background-color: var(--accent);
     color: var(--background);
 }
+
+table {
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
+}

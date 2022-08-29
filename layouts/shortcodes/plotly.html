@@ -1,0 +1,11 @@
+{{ $json := .Get "json" }}
+{{ $height := .Get "height" | default "200px" }}
+<figure class="center" style="width: 100%;">
+<div id="{{$json}}" class="plotly" style="height:{{$height}}"></div>
+<script>
+Plotly.d3.json({{$json}}, function(err, fig) {
+    Plotly.plot('{{$json}}', fig.data, fig.layout, {responsive: true});
+});
+</script>
+<figcaption class="center">{{ .Get "caption" | safeHTML }}</figcaption>
+</figure>
