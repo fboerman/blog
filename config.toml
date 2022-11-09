@@ -4,6 +4,7 @@ title = "Blog Frank Boerman"
 theme = "terminal"
 paginate = 10
 staticDir = ["static"]
+enableEmoji = true
 
 [markup.goldmark.renderer]
 # allow inclusion of html in posts. Its a personal blog that is statically compiled so its not needed to prevent this
@@ -11,7 +12,7 @@ unsafe=true
 
 [params]
   #ping = "http://localhost:5000"
-  ping = "https://ping.boerman.dev"
+  #ping = "https://ping.boerman.dev"
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
   # ["orange", "blue", "red", "green", "pink"]
