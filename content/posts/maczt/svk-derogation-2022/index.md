@@ -1,7 +1,7 @@
 ---
 title: "Summary and anotation of the recent ACER decision on SvK derogation of the 70% rule for 2022"
 date: 2022-11-09
-draft: false
+draft: true
 description: "ACER has recently ruled for the first time on a derogation for the 70% rule. In this case for the Swedish TSO SvK. A summary and some thoughts"
 ---
 Disclaimer: This post is a bit more in depth policy then my normal ones. If you are not interested in the 70% rule then do not bother with this post. Since I work a lot with this rule in my work at TenneT I found it interesting to do a deep dive. I have tried to make it accessible even if you haven't encounter this rule before but are still interested in capacity calculation regulation. I have added explanations and interpretations through out the text, which are solely my own.    
