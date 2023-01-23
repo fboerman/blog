@@ -43,12 +43,12 @@ Validation corrections for net security are also not present yet.
 Virtual capacities (AMR) are mainly zero, that is quite rare in CORE FlowBased and I am not sure if that is due to not publishing all of them or if they are indeed not needed.
 
 Now to visualize the domain for some quick checks.  
-In figure 1 below the average Remaining Available Margin (RAM) is shown per TSO as a percentage of the total capacity possible on a line (Fmax) over all constraints (CNECs).
-{{< plotly json="avg_ram.json" height="400px" caption="Figure 1: Average RAM as percentage of Fmax per TSO per month (figure is interactive)">}}
+In figure 1 below the average Remaining Available Margin (RAM) is shown per TSO as a percentage of the total capacity possible on a line (Fmax) over all presolved constraints.
+{{< plotly json="avg_ram.json" height="400px" caption="Figure 1: Average RAM as percentage of Fmax per TSO per month, presolved domain (figure is interactive)">}}
 It seems all TSO's have a quite high average RAM and all above the 70% minimum required from European regulation. I couldn't find any reference to a minimum RAM mechanism as in CORE, but the fact that this quite high average RAM is achieved it seems plausible that one is used, but not published (yet).
 
 In figure 2 below the average reference flow as percentage of Fmax is shown. This is the flow that is already there before the day-ahead market for various reasons.
-{{< plotly json="avg_fref.json" height="400px" caption="Figure 2: Average Fref as percentage of Fmax per TSO per month (figure is interactive)">}}
+{{< plotly json="avg_fref.json" height="400px" caption="Figure 2: Average Fref as percentage of Fmax per TSO per month, presolved domain (figure is interactive)">}}
 Here some interesting difference can be seen. Apparently Fingrid reports a consistently higher reference flow on average on its CNECs than the other TSOs. I am not expert on the Nordic grid and thus have no idea why. If any Nordic expert is reading this feel free to reach out ;)
 
 This is a highover average, for a look at more detailed average RAM per TSO I have made a dashboard which is automatically updated [here](https://data.boerman.dev/d/ZsMawToVz/nordic-flowbased-parallel-run-domain-results?orgId=1).  
@@ -111,6 +111,6 @@ The full dashboard for the simulation results I created can be found [here](http
 These are all very preliminary statements and more results and indicators are needed to say more about this. Especially the global social welfare change is the best indicator, but data on that is only available very sparsely.
 
 ## Whats next?
-The publication of these first results are a big milestone for the Nordic FlowBased implementation. It shows they are able to run a stable process and get plausible results from them. Big congratulations to all involved! The planned go live date is somewhere in 2024 Q1 so there is still a year to further flesh things out. In particular I am curious about the net security validations and more info about the branches such as eic codes. More social welfare analysis is also crucial to build confidence in that the system really is better and more efficient for society as a whole.  
+The publication of these first results are a big milestone for the Nordic FlowBased implementation. It shows they are able to run a stable process and get plausible results from them. Big congratulations to all involved! The planned go live date is somewhere in 2024 Q1 so there is still a year to further flesh things out. In particular I am curious abouet the net security validations and more info about the branches such as eic codes. More social welfare analysis is also crucial to build confidence in that the system really is better and more efficient for society as a whole.  
 I will try to repeat this blog post later on this year when more results become available to see where it is going.
 In the meantime, as always, if you have any questions or remarks please don't hesitate to contact me, especially if you are a Nordic FlowBased expert ;)
