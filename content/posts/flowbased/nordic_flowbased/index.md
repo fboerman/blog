@@ -14,7 +14,7 @@ In this post I take a quick look at these first results.
 I have pulled the data from the publication tool as well as the [RCC page](https://nordic-rcc.net/flow-based).  
 The FlowBased results are available for quite some months but during the run the process is continuously improved. I have therefor opted to view the last couple of months, arbitrary chosen starting from 2022-09-01 until the last business day available when writing this, 2023-01-23. For this timerange there is at least one constraint for every hour in the dataset.
 
-For the simulated market results I have pulled the excel files from the RCC page. Only a couple weeks are available with gaps. Only two days in September 2022, another three in october 2022 and all days between 2022-11-11 and 2022-12-25. From 2022-11-11 they are published continuously but with a delay, so hopefully more results for after 2022-12-25 will come available soon.
+For the simulated market results I have pulled the excel files from the RCC page. Only a couple weeks are available with gaps. Only two days in September 2022, another three in october 2022 and all days between 2022-11-11 and 2022-11-30 and again from 2022-12-11 and 2022-12-25. From 2022-12-11 they are published continuously but with a delay, so hopefully more results for after 2022-12-25 will come available soon.
 
 ## FlowBased Domain Results
 So first lets look at the set of FlowBased constraints themselves, called the final domain. It is available from [the beta version of the publication tool](https://test-publicationtool.jao.eu/nordic/), where various parameters are published.  
@@ -64,11 +64,16 @@ In figure 3 below a live embed is shown.
 The FlowBased domain results are not the only outputs of the parallel run. These capacity results are also used to simulate the market with real market data. From there we can see changes in price results. As outlined above these results are not a big set, only 960 hours are available. These are only the prices and prices spreads, no social welfare analysis is shown. This is available in the reports that are published next to it, but those are only available for two weeks so I have left them out of scope for this post for now.
 
 A simple but interesting visualization is the average price shift between simulations and production. In figure 4 below this is visualized in a map per bidding zone present in the external parallel run. Here you can also see some non Nordic bidding zones. These have interconnections with the Nordic zones and are thus also impacted.
-{{<figure src="prices_diff.png" caption="Figure 4: Average difference between simulated prices and production prices per hour over all hours, negative number means a lower price on average in the simulations. All in EUR/MWh" >}}
+{{<figure src="prices_diff.png" caption="Figure 4: Average difference between simulated prices and production prices per hour over all hours, negative number means a lower price on average in the simulations. All in EUR/MWh" clickable="true">}}
 
 From here it can be seen that Denmark, Netherlands and Germany and the south of Norway have lower prices while the rest has slightly higher prices. This does not mean that the latter do not benefit. These are purely the Day Ahead prices, with the market coupling optimizing for global welfare (both producers and consumers) for all zones summed.
 
-A much more interesting indicator is the price spreads on borders. A more efficient working capacity calculation should result in more price convergence, ie lower price spreads on bidding zone borders. The average difference in price spreads per border is shown in table 2 below.
+Price shifts are caused by shifts of import/exports. This can be visualized too by looking at the average change in netto position (the sum of all imports and exports of a zone). A negative netto position means net import and a positive number net exports. Thus a negative average difference in netto position means the zone has shifted towards the import direction and vice versa. This visualization is shown in figure 5 below.
+{{<figure src="np_diff.png" caption="Figure 5: Average differnce between simulated Netto Position and production Netto Position over all hours, negative number means shift into import direction. All in MWh" clickable="true">}}
+
+From here it can be seen that the higher load zones, the more densily populated areas of South of Norway and Sweden, shifts towards import direction while the more production heavy areas (the north of those counties) shift more to export. This corresponds to the price shifts in figure 4.
+
+A much more interesting indicator however is the price spreads on borders. A more efficient working capacity calculation should result in more price convergence, ie lower price spreads on bidding zone borders. The average difference in price spreads per border is shown in table 2 below.
 <figure class="left" style="width:100%">
 
 | Border    | Average Difference | Border    | Average Difference |
@@ -101,7 +106,7 @@ Another interesting indicator is the price spread in the whole region. So the di
 
 <iframe src="https://data.boerman.dev/d-solo/_PP3MATVz/nordic-prices-nordics-external-parallel-run-flowbased?orgId=1&from=1670626800000&to=1672095600000&panelId=3" width="100%" height="500vh" frameborder="0"></iframe>
 
-<figcaption class="center">Figure 5: Price spread in Nordic region for both simulated and production values, for last continuous range available. All in EUR/MWh</figcaption>
+<figcaption class="center">Figure 6: Price spread in Nordic region for both simulated and production values, for last continuous range available. All in EUR/MWh</figcaption>
 </figure>
 The average difference is -34.84 EUR/MWh and in 71% of the shown timestamps the price spread in the simulation results is lower then the prices in production. That is quite a nice result.  
 The disclaimer here however is that the timerange is small and more data is needed for a more confident conclusion. But for a first result its encouraging!
