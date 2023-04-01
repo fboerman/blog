@@ -63,7 +63,7 @@ This is visualized in terms of average change in netto position (the sum of all 
 
 This coupling between prices and netto position shifts makes sense in that flowbased has made it possible to shift more power from a historical cheap zone (thus increasing the prices and the export) to a historical more expensive zone (thus decreasing prices and increasing import). This largely corresponds to zones with high load, such as larger cities and industry, in Norway and Denmark.
 
-However this high over indicator is also market situation sensitivt, on how much the prices shift. A much more interesting indicator is the price spreads on borders. A more efficient working capacity calculation should result in more price convergence, ie lower price spreads on bidding zone borders. The average difference in price spreads per border is shown in table 2 below. 
+However this high over indicator is also market situation sensitive, on how much the prices shift. A much more interesting indicator is the price spreads on borders. A more efficient working capacity calculation should result in more price convergence, ie lower price spreads on bidding zone borders. The average difference in price spreads per border is shown in table 2 below. 
 
 <figure class="left" style="width:100%">
 
