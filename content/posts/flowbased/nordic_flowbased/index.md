@@ -1,23 +1,25 @@
 ---
-title: "FlowBased: a quick look at first results of the Nordic FLowBased parallel run"
+title: "Flowbased: a quick look at first results of the Nordic Flowbased parallel run"
 date: 2023-01-23
 draft: false
 description: "For some time now the external parallel run for the implementation of the FlowBased capacity calculation methodology in the Nordics is live. Time to look at the first results!"
 plotly: true
 ---
 
-The FlowBased capacity calculation methodology that I have written about earlier is not meant only for continental Europe. In the Nordics (NO, SE, DK and FI) the TSO's and market parties have been working on an implementation in their region as well. In the recent months they have started to publish results from their external parallel run. This is a process in which you run the new methodology in parallel to the old one still in production to be able to compare results.
+The Flowbased capacity calculation methodology that I have written about earlier is not meant only for continental Europe. In the Nordics (NO, SE, DK and FI) the TSO's and market parties have been working on an implementation in their region as well. In the recent months they have started to publish results from their external parallel run. This is a process in which you run the new methodology in parallel to the old one still in production to be able to compare results.
 
 In this post I take a quick look at these first results.
 
 ## Some remarks on the data
 I have pulled the data from the publication tool as well as the [RCC page](https://nordic-rcc.net/flow-based).  
-The FlowBased results are available for quite some months but during the run the process is continuously improved. I have therefor opted to view the last couple of months, arbitrary chosen starting from 2022-09-01 until the last business day available when writing this, 2023-01-23. For this timerange there is at least one constraint for every hour in the dataset.
+The Flowbased results are available for quite some months but during the run the process is continuously improved. I have therefor opted to view the last couple of months, arbitrary chosen starting from 2022-09-01 until the last business day available when writing this, 2023-01-23. For this timerange there is at least one constraint for every hour in the dataset.
 
 For the simulated market results I have pulled the excel files from the RCC page. Only a couple weeks are available with gaps. Only two days in September 2022, another three in october 2022 and all days between 2022-11-11 and 2022-11-30 and again from 2022-12-11 and 2022-12-25. From 2022-12-11 they are published continuously but with a delay, so hopefully more results for after 2022-12-25 will come available soon.
 
-## FlowBased Domain Results
-So first lets look at the set of FlowBased constraints themselves, called the final domain. It is available from [the beta version of the publication tool](https://test-publicationtool.jao.eu/nordic/), where various parameters are published.  
+UPDATE: I later found a bug in the date parsing. So the market results are actually continious starting at 2022-12-11. I have rectified this in the dashboards. For the statistics presented in this post the differences are small so I will leave it as it is. See the update for more recent data in which this bug is also rectified.
+
+## Flowbased Domain Results
+So first lets look at the set of Flowbased constraints themselves, called the final domain. It is available from [the beta version of the publication tool](https://test-publicationtool.jao.eu/nordic/), where various parameters are published.  
 
 A couple of remarks can be made from the available final domain. Most basic information is there, the capacity given to the market (RAM) as well as the maximum physical flow (Fmax) and the reference flow (Fref) is given.  
 Designations of which constraints are presolved (a subset of constraints which are the ones that are really relevant with all others being less restrictive then this subset) are also available.  
@@ -40,7 +42,7 @@ These numbers seem quite low to me and suggest that only a subset of operational
    
 There also some things missing, again to be expected for a beginning phase of a parallel run. No EIC codes are given and many CNEC names look like placeholders. Information about  substations of a constraint is only filled in sparsely.  
 Validation corrections for net security are also not present yet.  
-Virtual capacities (AMR) are mainly zero, that is quite rare in CORE FlowBased and I am not sure if that is due to not publishing all of them or if they are indeed not needed.
+Virtual capacities (AMR) are mainly zero, that is quite rare in CORE Flowbased and I am not sure if that is due to not publishing all of them or if they are indeed not needed.
 
 Now to visualize the domain for some quick checks.  
 In figure 1 below the average Remaining Available Margin (RAM) is shown per TSO as a percentage of the total capacity possible on a line (Fmax) over all presolved constraints.
@@ -61,7 +63,7 @@ In figure 3 below a live embed is shown.
 </figure>
 
 ## Market Simulation Results
-The FlowBased domain results are not the only outputs of the parallel run. These capacity results are also used to simulate the market with real market data. From there we can see changes in price results. As outlined above these results are not a big set, only 960 hours are available. These are only the prices and prices spreads, no social welfare analysis is shown. This is available in the reports that are published next to it, but those are only available for two weeks so I have left them out of scope for this post for now.
+The Flowbased domain results are not the only outputs of the parallel run. These capacity results are also used to simulate the market with real market data. From there we can see changes in price results. As outlined above these results are not a big set, only 960 hours are available. These are only the prices and prices spreads, no social welfare analysis is shown. This is available in the reports that are published next to it, but those are only available for two weeks so I have left them out of scope for this post for now.
 
 A simple but interesting visualization is the average price shift between simulations and production. In figure 4 below this is visualized in a map per bidding zone present in the external parallel run. Here you can also see some non Nordic bidding zones. These have interconnections with the Nordic zones and are thus also impacted.
 {{<figure src="prices_diff.png" caption="Figure 4: Average difference between simulated prices and production prices per hour over all hours, negative number means a lower price on average in the simulations. All in EUR/MWh" clickable="true">}}
@@ -99,9 +101,9 @@ A much more interesting indicator however is the price spreads on borders. A mor
 
 <figcaption class="center">Table 2: Average difference in price spread per bidding zone border, averaged over all hours, all in EUR/MWh</figcaption>
 </figure>
-The table shows a large decrease in average price spread for some borders and a small increase on others, so overall the price convergence seems indeed to be improving when using FlowBased.
+The table shows a large decrease in average price spread for some borders and a small increase on others, so overall the price convergence seems indeed to be improving when using Flowbased.
 
-Another interesting indicator is the price spread in the whole region. So the difference between the maximum and minimum price for the whole region per hour. In figure 5 this is shown, together with a comparison with production value. The blue bars signal the difference of simulation vs production, so a negative value is a decrease in the spread for that hour. Only the last full block of results is shown here.
+Another interesting indicator is the price spread in the whole region. So the difference between the maximum and minimum price for the whole region per hour. In figure 6 this is shown, together with a comparison with production value. The blue bars signal the difference of simulation vs production, so a negative value is a decrease in the spread for that hour. Only the last full block of results is shown here.
 <figure class="left" style="width:100%">
 
 <iframe src="https://data.boerman.dev/d-solo/_PP3MATVz/nordic-prices-nordics-external-parallel-run-flowbased?orgId=1&from=1670626800000&to=1672095600000&panelId=3" width="100%" height="500vh" frameborder="0"></iframe>
@@ -116,6 +118,6 @@ The full dashboard for the simulation results I created can be found [here](http
 These are all very preliminary statements and more results and indicators are needed to say more about this. Especially the global social welfare change is the best indicator, but data on that is only available very sparsely.
 
 ## Whats next?
-The publication of these first results are a big milestone for the Nordic FlowBased implementation. It shows they are able to run a stable process and get plausible results from them. Big congratulations to all involved! The planned go live date is somewhere in 2024 Q1 so there is still a year to further flesh things out. In particular I am curious abouet the net security validations and more info about the branches such as eic codes. More social welfare analysis is also crucial to build confidence in that the system really is better and more efficient for society as a whole.  
+The publication of these first results are a big milestone for the Nordic Flowbased implementation. It shows they are able to run a stable process and get plausible results from them. Big congratulations to all involved! The planned go live date is somewhere in 2024 Q1 so there is still a year to further flesh things out. In particular I am curious abouet the net security validations and more info about the branches such as eic codes. More social welfare analysis is also crucial to build confidence in that the system really is better and more efficient for society as a whole.  
 I will try to repeat this blog post later on this year when more results become available to see where it is going.
-In the meantime, as always, if you have any questions or remarks please don't hesitate to contact me, especially if you are a Nordic FlowBased expert ;)
+In the meantime, as always, if you have any questions or remarks please don't hesitate to contact me, especially if you are a Nordic Flowbased expert ;)
