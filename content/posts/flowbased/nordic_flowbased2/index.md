@@ -5,11 +5,12 @@ draft: false
 description: "The Nordic Flowbased external parallel run is still going strong and its two months since my first look so time for an update!"
 plotly: true
 ---
+The Nordic Flowbased external parallel run is still going strong and its two months since my first look so time for an update! 
 
 If you missed it, please see [the first part](https://boerman.dev/posts/flowbased/nordic_flowbased/) for a general introduction and some data remarks.
 
 ## Flowbased Domain Results
-The flowbased process output seems to be still quite stable. From business day 2022-09-01 until the last business day possible, at time of writing 2023-03-31, all 5088 hours have a domain. All FB domain data in this post is for this time range.  
+Lets start with looking at the capacity calcuation process and domain. The flowbased process output seems to be still quite stable. From business day 2022-09-01 until the last business day possible, at time of writing 2023-03-31, all 5088 hours have a domain. All FB domain data in this post is for this time range.  
  According to the [FB domain backup page](https://test-publicationtool.jao.eu/nordic/FBDomainBackup) only for two business days, 2023-03-16 and 17 a fallback or backup was applied. Thats only a failure rate of 0.94%. Thats pretty good for a parallel run.
 
 When looking at the number of average constraints per hour the numbers have barely moved since the last post. See table 1 below for current numbers per TSO, I have filtered on actual branches, so excluding virtual ones.
@@ -67,28 +68,18 @@ However this high over indicator is also market situation sensitive, on how much
 
 <figure class="left" style="width:100%">
 
-| border   | average difference |
-|----------|--------------------|
-| NO3-NO5 | -28.63             |
-| NO1-NO3 | -25.55             |
-| FI-NO4  | -19.47             |
-| NO4-SE2 | -16.12             |
-| SE1-NO4 | -12.94             |
-| DK1-SE3 | -6.05              |
-| DK1-DK2 | -5.22              |
-| FI-SE1  | -4.55              |
-| NO3-NO4 | -2.74              |
-| SE3-SE4 | -0.57              |
-| DK2-SE4 | 0.97               |
-| DK1-NL  | 1.15               |
-| NO1-SE3 | 1.21               |
-| NO1-NO5 | 1.72               |
-| NO1-NO2 | 3.23               |
-| NO2-NO5 | 4.17               |
-| FI-SE3  | 7.35               |
-| SE1-SE2 | 9.11               |
-| NO3-SE2 | 9.41               |
-| SE2-SE3 | 13.96              |
+| border   | average difference | border   | average difference |
+|----------|--------------------|----------|--------------------|
+| NO3-NO5 | -28.63             | DK2-SE4 | 0.97               |
+| NO1-NO3 | -25.55             | DK1-NL  | 1.15               |
+| FI-NO4  | -19.47             | NO1-SE3 | 1.21               |
+| NO4-SE2 | -16.12             | NO1-NO5 | 1.72               |
+| SE1-NO4 | -12.94             | NO1-NO2 | 3.23               |
+| DK1-SE3 | -6.05              | NO2-NO5 | 4.17               |
+| DK1-DK2 | -5.22              | FI-SE3  | 7.35               |
+| FI-SE1  | -4.55              | SE1-SE2 | 9.11               |
+| NO3-NO4 | -2.74              | NO3-SE2 | 9.41               |
+| SE3-SE4 | -0.57              | SE2-SE3 | 13.96              |
 
 <figcaption class="center">Table 2: Average difference in price spread per bidding zone border, averaged over all hours, all in EUR/MWh</figcaption>
 </figure>
