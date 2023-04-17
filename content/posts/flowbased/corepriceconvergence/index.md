@@ -12,7 +12,7 @@ The go live of FB CORE at business day 2022-06-09 coincided with an ongoing wors
 ## Definitions and data remarks
 To start off with some definitions: hourly price spread is defined as the difference between the maximum and minimum price within one hour within a certain region on the Day Ahead market. In this post I focus on the CORE region, however I have excluded Poland from all analysis. The reason for this is that Poland has been applying heavy artificial restrictions on its import and export in the past winter. This has resulted in vastly different prices then the rest of the reason which has nothing to do with flowbased.  
 The CORE region left is thus defined as the bidding zones of: Austria (AT), Belgium (BE), Czech Republic (CZ), Germany/Luxemburg (DE_LU), France (FR), Croatia (HR), Hungary (HU), Netherlands (NL), Romenia (RO), Slovenia (SI) and Slovakia (SK).  
-All data is based on the day ahead prices as published on the ENTSOE transparancy platform and spans between business day 2022-06-09 and 2023-03-31. The dataset constitudes 7104 timestamps, which means there are no hours missing in that period.
+All data is based on the day ahead prices as published on the ENTSOE transparency platform and spans between business day 2022-06-09 and 2023-03-31. The dataset constitutes 7104 timestamps, which means there are no hours missing in that period.
 
 
 ## The Prices
@@ -24,12 +24,12 @@ The DA prices in this period were rather extreme, both in their height but also 
 <figcaption class="center">Figure 1: DA prices for CORE region, excluding Poland (live dashboard embed, interactive)<figcaption>
 </figure>
 
-Figure 1 is not very readible so lets zoom out a bit, in figure 2 below the mean of the whole region (excluding Poland) is shown per month. Especially in July, August and September and again half way through December and early January the prices exploded. This is due to the European gas crisis, something that has been extensively covered about already by others.  
+Figure 1 is not very readable so lets zoom out a bit, in figure 2 below the mean of the whole region (excluding Poland) is shown per month. Especially in July, August and September and again half way through December and early January the prices exploded. This is due to the European gas crisis, something that has been extensively covered about already by others.  
 
 {{< plotly json="fig_price_mean.json" height="400px" caption="Figure 2: Average DA price per month in CORE region, excluding Poland (figure is interactive)" >}}
 
-Still sometimes the prices also plumetted in some zones, due to high infeed of cheap renewables. In 2.5% of all timestamps at least one zone was below 1 EUR/MWh and in 1.7% of all timestamps it was even negative in at least one zone!  
-Luckily the prices have dropped together due to the easing of the gas crisis, but historically they keep being high. As a reminder in the first three months of 2021 these same averages were 56, 49 and 52 EUR/MWh for January, February and March respectively.
+Still sometimes the prices also plummeted in some zones, due to high infeed of cheap renewables. In 2.5% of all timestamps at least one zone was below 1 EUR/MWh and in 1.7% of all timestamps it was even negative in at least one zone!  
+Luckily the prices have dropped due to the easing of the gas crisis, but historically they keep being high. As a reminder in the first three months of 2021 these same averages were 56, 49 and 52 EUR/MWh for January, February and March respectively.
 
 <!-- <iframe src="https://data.boerman.dev/d-solo/E-r9pZc4k/energy-market-day-ahead-analyses-core?orgId=1&from=1654725600000&to=1680299999000&kiosk=tv&theme=dark&panelId=12"  width="100%" height="500vh" frameborder="0"></iframe> -->
 
@@ -52,8 +52,8 @@ So how are these price spreads in the bigger picture? In figure 6 below the abso
 
 {{< plotly json="fig_spread_abs.json" height="400px" caption="Figure 6: Absolute hourly price spreads in CORE region excluding Poland, binned in categories." >}}
 
-Here we can see that in 25.56% of the hours there was full price convergence, so price spread of 0. For a large area such as the CORE one, in crisis times, thats quite impressive!  
-In almost half of the time, 46.8%, the price spread was less then 100 EUR/MWh. Although that doesnt sound that much, it is quite context dependent. 100 EUR/MWh spread between 10 and 110 is much more impactfull then say between 700 and 800 EUR/MWh.  
+Here we can see that in 25.56% of the hours there was full price convergence, so price spread of 0. For a large area such as the CORE one, in crisis times, that's quite impressive!  
+In almost half of the time, 46.8%, the price spread was less then 100 EUR/MWh. Although that doesn't sound that much, it is quite context dependent. 100 EUR/MWh spread between 10 and 110 is much more impactful then say between 700 and 800 EUR/MWh.  
 
 To better look at this indicator in this context, we can calculate a new indicator C%. This is then defined as the hourly price spread as expressed as a percentage of the mean price in that hour.
 Or more formally:
@@ -69,7 +69,7 @@ Lets now bin the resulting numbers over the whole dataset, which results in figu
 
 Full convergence (or $C\\%=0$) is still 25.56% of the time. However now we can also see that in 27.62% of the time the price spread is between 0 and 25% of the mean price in an hour! So in total for half of the time the price spreads are less then a quarter of the mean price. Within the context of the extreme market conditions this seems a quite good result. 
 
-An even beter benchmark would be to compare this with a non flowbased approach, but that is not possible because that doesnt exist anymore in the CORE region. Comparing with another flowbased region is also not possible yet, the nordic region is implementing flowbased but not yet live. Perhaps in the future it would be interesting to see how flowbased performs, price spread wise, in this different region. But for that we have to wait at least another year.
+An even better benchmark would be to compare this with a non flowbased approach, but that is not possible because that doesn't exist anymore in the CORE region. Comparing with another flowbased region is also not possible yet, the nordic region is implementing flowbased but not yet live. Perhaps in the future it would be interesting to see how flowbased performs, price spread wise, in this different region. But for that we have to wait at least another year.
 
 So within the context we can see now the system seems to hold up quite nicely. It would be interesting to see that the longer flowbased CORE marketcoupling runs, how the full (or almost full) price convergence share holds up.
 
