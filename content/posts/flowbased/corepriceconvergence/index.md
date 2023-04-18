@@ -1,6 +1,6 @@
 ---
 title: 'Flowbased: A look at the CORE price convergence since golive'
-date: 2023-04-16
+date: 2023-04-18
 draft: false
 description: "The go live of flowbased CORE coincided with the worst energy crisis in Europe in a long time. How did the price convergence in the CORE region held up in these circumstances?"
 plotly: true
@@ -10,7 +10,8 @@ A little over 10 months ago flowbased capacity calculation method went live in t
 The go live of FB CORE at business day 2022-06-09 coincided with an ongoing worst energy crisis in Europe in recent memory. I thought it would be interesting to take a look at how the price spread in the region held up in those times.
 
 ## Definitions and data remarks
-To start off with some definitions: hourly price spread is defined as the difference between the maximum and minimum price within one hour within a certain region on the Day Ahead market. In this post I focus on the CORE region, however I have excluded Poland from all analysis. The reason for this is that Poland has been applying heavy artificial restrictions on its import and export in the past winter. This has resulted in vastly different prices then the rest of the reason which has nothing to do with flowbased.  
+To start off with some definitions: hourly price spread is defined as the difference between the maximum and minimum price within one hour within a certain region on the Day Ahead market. In this post I focus on the CORE region, however I have excluded Poland from all analysis. The reason for this is that Poland has been applying heavy additional restrictions on its import and export in the past winter. The polish TSO PSE says they have to conserve coal fuel due to shortages and need these restrictions for operational security. have This has resulted in vastly different prices then the rest of the reason which has nothing to do with flowbased.
+   
 The CORE region left is thus defined as the bidding zones of: Austria (AT), Belgium (BE), Czech Republic (CZ), Germany/Luxemburg (DE_LU), France (FR), Croatia (HR), Hungary (HU), Netherlands (NL), Romenia (RO), Slovenia (SI) and Slovakia (SK).  
 All data is based on the day ahead prices as published on the ENTSOE transparency platform and spans between business day 2022-06-09 and 2023-03-31. The dataset constitutes 7104 timestamps, which means there are no hours missing in that period.
 
@@ -52,8 +53,8 @@ So how are these price spreads in the bigger picture? In figure 6 below the abso
 
 {{< plotly json="fig_spread_abs.json" height="400px" caption="Figure 6: Absolute hourly price spreads in CORE region excluding Poland, binned in categories." >}}
 
-Here we can see that in 25.56% of the hours there was full price convergence, so price spread of 0. For a large area such as the CORE one, in crisis times, that's quite impressive!  
-In almost half of the time, 46.8%, the price spread was less then 100 EUR/MWh. Although that doesn't sound that much, it is quite context dependent. 100 EUR/MWh spread between 10 and 110 is much more impactful then say between 700 and 800 EUR/MWh.  
+Here we can see that in 25.56% of the hours there was full price convergence (bar A), so price spread of 0. For a large area such as the CORE one, in crisis times, that's quite impressive!  
+In almost half of the time, 46.8%, the price spread was less then 100 EUR/MWh (split out over bar B, C and D). Although that doesn't sound that much, it is quite context dependent. 100 EUR/MWh spread between 10 and 110 is much more impactful then say between 700 and 800 EUR/MWh.  
 
 To better look at this indicator in this context, we can calculate a new indicator C%. This is then defined as the hourly price spread as expressed as a percentage of the mean price in that hour.
 Or more formally:
