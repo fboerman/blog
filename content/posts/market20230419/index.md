@@ -1,8 +1,8 @@
 ---
-title: 'Day Ahead Market adventures: capacity restrictions and second auction for business day 2023-04-19'
-date: 2023-04-19
+title: 'Day Ahead Market adventures: capacity restrictions and huge negative prices for business day 2023-04-19'
+date: 2023-04-21
 draft: false
-description: 'Large capacity restrictions, a second auction and prices dropping to 200 EUR/MWh below zero, what happened on trading day 2023-04-18 for business day 2023-04-19? Time for some explanations in this writeup!'
+description: 'Large capacity restrictions and prices dropping to 200 EUR/MWh below zero, what happened on trading day 2023-04-18 for business day 2023-04-19? Time for some explanations in this writeup!'
 plotly: true
 ---
 
