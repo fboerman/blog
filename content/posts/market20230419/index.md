@@ -1,13 +1,12 @@
 ---
 title: 'Day Ahead Market adventures: capacity restrictions and huge negative prices for business day 2023-04-19'
-date: 2023-04-21
+date: 2023-04-23
 draft: false
 description: 'Large capacity restrictions and prices dropping to 200 EUR/MWh below zero, what happened on trading day 2023-04-18 for business day 2023-04-19? Time for some explanations in this writeup!'
 plotly: true
 ---
 
 The day ahead market has fascinated me since the very first day that I started working in the sector. Many components working together to form a safe and efficient market for electricy trading. On the 18th of April this year in some of these components rare events happened. In this post, I will offer an explaination on what happened.  
-First a disclaimer: through my work at TenneT I have intimate knowledge about details of what happened in operations. However, in this public post, I will only use public available info to construct a picture. 
 
 ## The Day Ahead market: a description and some definitions
 In the Day Ahead market every day electricity is traded. The traded energy is then delivered the day after trading. This explains the name, you trade one day ahead. We call this first day the *trading day* and the second day the *business day*. For the case with the extreme negative prices in this post 2023-04-18 is thus the *trading day* and 2023-04-19 is the *business day*.  
@@ -94,9 +93,9 @@ Here, we can see that the majority of TSOs has applied IVAs and Elia even a very
 In complex systems of any kind it is always possible that something goes wrong. While the TSO systems are designed very robustly sometimes things go wrong. What exactly goes wrong can be a number of things, for example an IT crash (possibly due to bugs), missing/incomplete input data or highly implausible results (as judged by operators). To still ensure safe grid operation a fallback procedure is then used in which a reduction is applied that leads to a situation that is assumed safe regardless of the circumstances. This is by definition a quite conservative low value.  
 A fallback situation is not unique to the local validation step, there are fallbacks defined for all steps of the market coupling process. These vary from rather simple things like the low values mentioned or replacement input data from a reference timestamp (for example if up to date grid models are unavailable), to more complex completely different backup processes. For example, if in the worst case the market coupling completely fails and no prices could be computed a so called "shadow auction" is held. These are a much more simplified (and thus less efficient) way to still get some trades going.  
 
-It is important to stress that, while rare, applying fallbacks is a regulated and expected process step. TSO's have the obligation to ensure safe grid operations and less capacity but garantueed to be safe is always better than more capacity but high risk for grid safety. Errors of any kind are always possible to happen and all TSO's have responded in an agreed way. It is therefore wrong to blankly blame certain TSO's for the mere fact that they reduced capacities. No TSO does this just for fun and all fallback incidents are extensively investigated and if needed measures for the future taken.
+It is important to stress that, while rare, applying fallbacks is an expected process step. TSO's have the obligation to ensure safe grid operations and less capacity but garantueed to be safe is always better than more capacity but high risk for grid safety. Errors of any kind are always possible to happen and all TSO's have responded in an agreed way. It is therefore wrong to blankly blame certain TSO's for the mere fact that they reduced capacities. No TSO does this just for fun and all fallback incidents are extensively investigated and if needed measures for the future taken.
 
-As for the size of the fallback, each TSO is allowed to define its own fallback rules. Why Elia decided to apply such a relatively large reduction as fallback is not known. Factually it is the largest by far and thus has the most impact. For more information on this we have to wait for them to publish a statement.
+As for the size of the fallback, each TSO is allowed to define its own fallback rules. Why Elia decided to apply such a relatively large reduction as fallback is not known. Because of its size it probably had the most impact, in interplay with the other fallbacks. It is possible that TSOs or regulators will release calculations on this in the future.
 
 ## The effect of IVAs of the 19th
 The effect of these restrictions we already saw in figure 2 and 3. To clarify, the relative impact on the theoretical boundaries on the netto position is expressed in figure 4 and 5 below, as a percentage of change compared between 18th and 19th. Keep in mind that the days are not exactly the same, and these boundaries shift every day and every hour. However the fact that these days were normal workingdays directly after eachother makes it comparible as a larger picture.
@@ -138,7 +137,9 @@ If we run this optimization for the hour with the lowest price (13:00 on the 19t
 
 Thus, in order for NL to reach its maximum export in the capacity domain, as available on 2023-04-19 13:00, 1 Germany would need to import more then 10GW, 2 SI would have flipped from slightly importing to massive exports and 3 AT would have a much higher export as well. These extremes seem unlikely to be the best solution for the optimization. It is thus not surprising that the market algorithm decided to not go into these extreme corners.
 
+These calculations cannot determine if without the reductions the price would have been non-negative. Determining this requires a full market simulation. However, given the large solar infeed in NL it is quite possible that the prices would be less negative but still under the zero.
+
 ## Conclusion
 This post has become quite long but I hope that anybody reading it has learned a bit more about how the market works and why the 19th was such a special case. If you have any remaining questions feel free to shoot me a message on twitter or linkedin or send me an email (info on the contact page of this blog). 
 
-DISCLAIMER: theories and assumptions described in this post reflects only my personal view and analysis of the energy market. They are NOT, in any way, related to my position as process specialist or reflect TenneT strategy or position. For company based opinions on this topic, please contact the communication office of TenneT. 
+DISCLAIMER: All info in this post is based on public available information. Theories and assumptions described in this post reflects only my personal view and analysis of the energy market. They are NOT, in any way, related to my position as process specialist or reflect TenneT strategy or position. For company based opinions on this topic, please contact the communication office of TenneT. 
