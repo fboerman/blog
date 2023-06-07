@@ -74,7 +74,7 @@ Lets now bin the resulting numbers over the whole dataset, which results in figu
 
 {{< plotly json="fig_spread_pct.json" height="400px" caption="Figure 7: Hourly price spreads in CORE region excluding Poland, relative to hourly mean price, binned in categories." >}}
 
-Full convergence (or $C\\%=0$) is still 26.94% of the time. However now we can also see that in 28.59% of the time the price spread is between 0 and 25% of the mean price in an hour! So in total for half of the time the price spreads are less then a quarter of the mean price. Within the context of the extreme market conditions this seems a quite good result! 
+Full convergence (or $C\\%=0$) is still 26.98% of the time. However now we can also see that in 28.59% of the time the price spread is between 0 and 25% of the mean price in an hour! So in total for a little over half of the time (55.57%) the price spreads are less then a quarter of the mean price. Within the context of the extreme market conditions this seems a quite good result! 
 
 An even better benchmark would be to compare this with a non flowbased approach, but that is not possible because that doesn't exist anymore in the CORE region. Comparing with another flowbased region is also not possible yet, the nordic region is implementing flowbased but not yet live. Perhaps in the future it would be interesting to see how flowbased performs, price spread wise, in this different region. But for that we have to wait at least another year.
 
