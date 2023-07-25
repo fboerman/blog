@@ -13,15 +13,15 @@ My colleague Joost Greunsven proposed a nice way to visualize the revenue of all
 
 {{< plotly json="fig_scatter_nl.json" height="400px" caption="Figure 1: the net revenue for NL for all hours in first half of 2023" >}}
 
-This plot can be broken down in four quadrants. The top left (I) is import with negative price, the top right (II) is export with positive price, the bottom left (III) is import with positive price and the bottom right (IV) export with negative price. Quadrant II and III is what most people would feel as "normal" and are the ones that are by far the most common. But I and IV can also happen due to the fact the market optimizes for the whole region and not only a single zone. It can be beneficial for the whole region if some zones export with negative prices for example. 
+This plot can be broken down in four quadrants. The top left (quadrant I) is import with negative price, the top right (quadrant II) is export with positive price, the bottom left (quadrant III) is import with positive price and the bottom right (quadrant IV) export with negative price. Quadrant II and III is what most people would feel as "normal" and are the ones that are by far the most common. But quadrant I and IV can also happen due to the fact the market optimizes for the whole region and not only a single zone. It can be beneficial for the whole region if some zones export with negative prices for example. 
  
-The core argument from opponents of the current market design is that with high renewables infeed IV is getting so large its a net loss for the Netherlands. When power is exported for a negative price NL pays for its power export, effectively subsidizing its neighbours. This tends to happen when large amounts of subsidized power floods on the market, in NL that is mostly solar power. Subsidies push the power price to be negative and if there is a large surplus this is then exported.  
+The core argument from opponents of the current market design is that with high renewables infeed quadrant IV is getting so large its a net loss for the Netherlands. When power is exported for a negative price NL pays for its power export, effectively subsidizing its neighbours. This tends to happen when large amounts of subsidized power floods on the market, in NL that is mostly solar power. Subsidies push the power price to be negative and if there is a large surplus this is then exported.  
 
-The title of figure 1 already shows that the overall business case for NL is still quite positive, the sum of net revenue is a positive 434.4 Million Euros. In figure 2 below a breakdown per quadrant is shown in a waterfall plot.
+The title of figure 1 already shows that the overall business case for NL is still quite positive, the sum of net revenue is a positive 434.4 Million Euros. In figure 2 below a breakdown per quadrant is shown in a waterfall chart.
 
 {{< figure src="fig_NL_2023_waterfall.svg" width="100%" height="400px" caption="Figure 2: Breakdown of net revenue of SDAC for NL in first half of 2023" >}}
 
-Here we can clearly see that IV is actually quite small compared to the big export and import with positive price quadrants. In fact when expressed in relative numbers IV is only 2.7% of the total absolute sum of all revenue points divided over only 2.9% of all hours in the first half of 2023.  
+Here we can clearly see that quadrant IV is actually quite small compared to the big export and import with positive price quadrants. In fact when expressed in relative numbers quadrant IV is only 2.7% of the total absolute sum of all revenue points divided over only 2.9% of all hours in the first half of 2023.  
 This is by no means a historical fluke. In fact this is an all time high since it started occuring in the dutch market in 2020, but it is still very small. In figure 3 the past 5 years net revenue is plotted with the total revenue of exporting with negative price next to it.
 
 {{< plotly json="fig_nl_overtime.json" height="400px" caption="Figure 3: Total net revenue vs Total revenue export with negative price for NL over the past 5 years" >}}
@@ -36,7 +36,7 @@ Figure 4 clearly shows that NL actually makes the most positive revenue around m
 
 
 ## SDAC revenue abroad
-Now all that export also means that some zones are net importers. A good example of this is our big neighbour Germany. It used to have a positive net revenue, but this year it is actually importing more, which results in the breakdown shown in figure 5. But even for DE it is sometimes optimal that it exports with negative prices. The IV quadrant is however relatively smaller then NL, representing 0.47% of total absolute revenue.
+Now all that export also means that some zones are net importers. A good example of this is our big neighbour Germany. It used to have a positive net revenue, but this year it is actually importing more, which results in the breakdown shown in figure 5. But even for DE it is sometimes optimal that it exports with negative prices. Quadrant IV is however relatively smaller then NL, representing 0.47% of total absolute revenue.
 
 More on SDAC revenue for other zones in a later post!
 
