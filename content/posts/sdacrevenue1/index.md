@@ -26,7 +26,7 @@ This is by no means a historical fluke. In fact, this is an all time high since 
 
 {{< plotly json="fig_nl_overtime.json" height="400px" caption="Figure 3: Total net revenue vs Total revenue export with negative price for NL over the past 5 years" >}}
 
-Here it can clearly be seen that this part has always been smalli. In addition, for the past four years NL has seen a positive net revenue from SDAC interactions. The year 2022 is exceptionally high here due to the extreme high prices that year with the gas crisis. Based on thisi, I would argue that the current market design is still very beneficial for the dutch generators.
+Here it can clearly be seen that this part has always been small. In addition, for the past four years NL has seen a positive net revenue from SDAC interactions. The year 2022 is exceptionally high here due to the extreme high prices that year with the gas crisis. Based on this, I would argue that the current market design is still very beneficial for the dutch generators.
 
 Now the argument is sometimes made that this revenue loss is mainly on the important hours of solar PV and that NL mainly makes a profit with its gas turbines at night. Figure 4 below shows the summed revenue in NL per hour of the day.
 
