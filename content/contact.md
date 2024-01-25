@@ -3,9 +3,9 @@ title: "Contact"
 #date: 2019-02-24
 draft: false
 ---
-Voor vragen opmerkingen complimenten of andere gekkigheid over deze site ben ik persoonlijk te bereiken op [frank@fboerman.nl](mailto:frank@fboerman.nl).
+For questions, compliments or other forms of messages you can reach me at my personal email [frank@fboerman.nl](mailto:frank@fboerman.nl).
 
-Voor zakelijke vragen ben ik te bereiken op [frank@kolibrisolutions.nl](mailto:frank@kolibrisolutions.nl).
+For business inquiries you can reach me at my personal business umbrella [frank@amunanalytics.eu](mailto:frank@amunanalytics.eu). For registration information on my business see [https://amunanalytics.eu/](https://amunanalytics.eu/).
 
-Mijn linkedin kan je {{< ping_url url="https://www.linkedin.com/in/frank-boerman-477613164/" key="contact_linkedin" text="hier" >}} vinden en ik ben ook actief op meerdere plekken op github: {{< ping_url url="https://github.com/fboerman/" key="contact_gith_fboerman" text="[1]" >}} {{< ping_url url="https://github.com/esdvfootloose/" key="contact_gith_esdv" text="[2]" >}} {{< ping_url  url="https://github.com/kolibrisolutions/" key="contact_gith_kol" text="[3]" >}}
+You can find me on linkedin [here](https://www.linkedin.com/in/frank-boerman-477613164/) and my twitter (or X) [here](https://twitter.com/FrankBoerman). I am also active on github [here](https://github.com/fboerman/).
 
