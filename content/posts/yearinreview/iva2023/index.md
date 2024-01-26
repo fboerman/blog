@@ -6,7 +6,7 @@ description: "Another year is over so time for a year in review series! First up
 plotly: true
 scientific: true
 ---
-Another year is over and I wanted to write a 'year in review' series about 2023! First up is a look at how different TSOs adjust the Flowbased Domain for net security reasons, the so called Individual Validations or IVA for short.
+Another year is over and I wanted to write a 'year in review' series about 2023! First up is a look at how different TSOs adjust the Flowbased Domain for grid security reasons, the so called Individual Validations or IVA for short.
 
 But first a quick shout out to the sponsor of my database server: [Code Yellow](https://codeyellow.nl/), who have provided me with hosting of my flowbased domain database server. Without them the analysis in this post would be a lot more work, so many thanks!
 
@@ -17,7 +17,7 @@ This post is specifically about the validation results of Flowbased CORE, Nordic
 ## What are virtual capacities and individual validations
 Lets start with an introduction to the topic. Experts can skip this part.  
 Virtual capacity is the capacity that a TSOs releases on top of the capacity calculated in the normal capacity calculation, to reach regulatory minimum capacity requirements. These requirements are also informally called the "70% rule".  
-Ever since the introduction of these virtual capacities the question arose about how to ensure net security for this virtual part. To tackle this the validation step was put into the Flowbased Capacity Calculation methodology.   
+Ever since the introduction of these virtual capacities the question arose about how to ensure grid security for this virtual part. To tackle this the validation step was put into the Flowbased Capacity Calculation methodology.   
 This step allows TSOs to reduce capacity on elements (CNECs) in the domain if **and only if** they can prove that they cannot secure that capacity, even when activating all available remedial actions (RA). Such actions are usually forms of redispatch.  Adjusting a CNEC is called Individual Validation Adjustment, IVA for short.  
 The idea behind this is that the non virtual part you get for free, but if the market uses the virtual part it incurs a TSO (and thus societal) cost. This then spurs grid investments to make sure you can reach the target capacity with as little virtual capacity as possible. 
 
@@ -33,7 +33,7 @@ Please note that this is a simplified picture of the whole flowbased process, bu
 With the rising of regulatory targets this validation of virtual capacities is becoming more and more important. For more information about these rising targets you can read for example the dutch action plan about this [here](https://www.rijksoverheid.nl/ministeries/ministerie-van-economische-zaken-en-klimaat/documenten/publicaties/2019/12/20/actieplan-verhoging-beschikbaarheid-zone-overschrijdende-transportcapaciteit-elektriciteitshandel).
 
 ### Remarks on the data
-The dataset spans the whole of 2023, so a total of 8760 hours. Due to operational process failure at Elia, which resulted in disproportional IVAs, Elia IVAs for the full day of 2023-04-19 as well as hour 11, 12 and 13 of 2023-08-21 have been filtered out.
+The dataset spans the whole of 2023, so a total of 8760 hours. At two days this year Elia had an exceptional unintended fallback causing a very distorted picture on IVAs. For this reason, Elia IVAs for the full day of 2023-04-19 as well as hour 11, 12 and 13 of 2023-08-21 have been filtered out. More information about the first day can be found in my post [here](https://boerman.dev/posts/market20230419/).
 
 Now that the topic and data remarks are introduced, lets get into the analysis.
 ## IVAs in 2023
@@ -45,7 +45,7 @@ Here we can see that in only 36% of the time no IVA was applied on presolved or 
 
 ## Differences between TSOs: methodologies
 So first off the most confusing part of this story: not all *Individual* Validations are actually done *Individual*. The TSOs of Germany, Austria and the Netherlands have decided to work together and have one tool that calculates IVAs for all three countries. This also allows them to apply IVAs on for example German CNECs to solve an overload in NL, which from a social welfare perspective is more efficient. Their tool is called DAVinCy.  
-In fact pooling the whole region would be more efficient and this is also forseen in the methodology, the so called Common Validation Adjustment or CVA. This is not implemented yet however, but is actively being worked on. DAVinCy can be seen as a foreruner of this.
+In fact pooling the whole region would be more efficient and this is also forseen in the methodology, the so called Common Validation Adjustment or CVA. This is not implemented yet however, but is actively being worked on.
 
 As mentioned each TSO is responsible for their own validation. Except for the common DAVinCy group, all CORE TSOs have thus developed their own methodologies of validation. Detailed explanations of these methodologies of each TSO (including the DAVinCy group) can be found in the appendix of CORE Consultative Group slides of 2023-03-28, starting from slide 41 [here](https://eepublicdownloads.blob.core.windows.net/public-cdn-container/clean-documents/Network%20codes%20documents/Implementation/ccr/2023/28_Jan_2023_Meeting_Presentation.pdf).
 Explaining each of them is outside the scope of this post. Instead this post will focus on the trend differences among TSOs.

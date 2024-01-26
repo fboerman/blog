@@ -26,8 +26,7 @@ unsafe=true
   [languages.en]
     title = "FJL Boerman Blog"
     subtitle = "A gathering of thoughts and personal projects"
-    keywords = ""
-    copyright = "Frank Boerman 2019-2023"
+    copyright = "Frank Boerman 2019-2024"
     menuMore = "Read More"
     readMore = "Read More"
     readOtherPosts = "Read more posts"
