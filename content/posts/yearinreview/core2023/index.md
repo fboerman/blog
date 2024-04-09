@@ -2,7 +2,7 @@
 title: "Year in review 2023: Day-Ahead market results"
 date: 2024-04-08
 draft: false
-idescription: "In this second part of my year in review series we take a look at the day ahead market results, specifically prices"
+description: "In this second part of my year in review series we take a look at the day ahead market results, specifically prices"
 plotly: true
 scientific: true
 ---
