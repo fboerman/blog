@@ -12,10 +12,10 @@ This series looks at indicators that I find personally most interesting and have
 Due to the [aggresive polish allocation constraint](https://data.boerman.dev/d/jS3wx4Q4z/allocation-constraint-pl-statistics?orgId=1) which regularly closes the borders for import and export Poland has been excluded from all CORE indicators.
 
 ## Prices
-To start with in figure 1 below the monthly average of the average hour price in CORE is shown. 
+To start with in figure 1 below the average hourly price in CORE is shown averaged by month. 
 {{<plotly json="fig_price_mean.json" height="300px" caption="Figure 1: Average Day Ahead price in CORE (excl. Poland) for 2023" >}}
 
-The interesting comparison is then to the same average of earlier years. To check this the data is zoomed out to 5 year in figure 2. The dashed red line here is the yearly average.  
+The interesting comparison is then to the same average of earlier years. To check this the data is zoomed out to a 5 year range in figure 2. The dashed red line here is the yearly average.  
 Here we can see that while prices have subsided substantially compared to the previous year (2022), historically speaking they are still high. In fact the yearly average of 2023 comes at 101.03 EUR/MWh which is marginally lower then the one from 2021, which turns out at 107.13 EUR/MWh. This is even with the somewhat skewed 2021 average towards the gas crisis as prices were already exploding the last months of 2021.
 
 {{<plotly json="fig_price_mean_longer.json" height="400px" caption="Figure 2: Average Day Ahead price in CORE (excl. Poland) for 2018-2023" >}}
@@ -29,7 +29,7 @@ The roll out of solar pv panels is now so successfull that this effect can thus 
 The decrease of the evening peak compared to the afternoon low (something I would like to coin "the duck curve indicator") is a whopping 45.8% for the whole region, as shown in this figure. For specific countries dominated by solar pv infeed this is even more extreme. For example for Germany this is 48.8% and for the Netherlands even 52.1%!
 
 ## Pricespreads
-In a larger region besides the average prices another interesting indicator is the price spreads per hour within the region. This is defined as the delta between the max and min price within an hour, within a region.  When a pricespread is zero its called full price convergence and thus no grid constraint actively limited the optimal market solution.  
+In a larger region, besides the average prices, another interesting indicator is the price spreads per hour within the region. This is defined as the delta between the max and min price within an hour, within a region.  When a pricespread is zero its called full price convergence and thus no grid constraint actively limited the optimal market solution.  
 First lets take the monthly average again. This time, for absolute price spreads in EUR/MWh. This is displayed in figure 4 below. 
 
 {{<plotly json="fig_pricespread_mean.json" height="300px" caption="Figure 4: Average hourly DA price spread, per month in CORE region (excl. Poland) for 2023" >}}
@@ -63,11 +63,11 @@ Here we can see that in 27% of all timestamps there was full price convergence i
 It also seems to be quite stable, as in my [previous post](https://boerman.dev/posts/flowbased/corepriceconvergence/) for the first year of CORE which is half 2022 and half 2023 it came out on 55.57%.  
 I do not compare to pre 2022 levels here given that the CORE region switched capacity calculation half way through 2022, which has a big impact on price convergence and is thus an unfair comparison when looking at market price results.
 
-For the final indicator in this post, figure 8 below shows again the relative price spread but this time averaged per hour of the day.
+For the final indicator in this post, figure 8 below shows again the relative price spread, but this time averaged per hour of the day.
 
 {{<plotly json="fig_spread_pct_perhour.json" height="400px" caption="Fgiure 8: Average relative price spread per hour of the day, CORE region (excl. Poland) in 2023" >}}
 
-Here we can actually see a reversed duck curve! The middle of the day hours have high relative price spread. This is the other side of the solar pv effect. The mean price may be low but due to the large differences between zones in terms of installed capacity of solar pv this can cause high price spreads.
+Here we can actually see a reversed duck curve! The middle of the day hours have high relative price spread. This is the other side of the solar pv effect. The mean price may be low, but due to the large differences between zones in terms of installed capacity of solar pv this can cause high price spreads.
 
 
 This concludes the second post on the "year in review" series. Next parts will focus on market revenues within CORE and zoom in on the netherlands. Furthermore soon the TenneT Annual Market update will be published in which some of my indicators will be used. Stay tuned on my linkedin for updates when more posts come online!
