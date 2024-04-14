@@ -69,7 +69,7 @@ For the final indicator in this post, figure 8 below shows again the relative pr
 
 {{<plotly json="fig_spread_pct_perhour.json" height="400px" caption="Fgiure 8: Average relative price spread per hour of the day, CORE region (excl. Poland) in 2023" >}}
 
-Here we can see a reversed duck curve! The middle of the day hours have high relative price spread. This is another effect of the solar pv . The mean price may be low, but due to the large differences between zones in terms of installed capacity of solar pv this can cause high price spreads.
+Here we can see a reversed duck curve! The middle of the day hours have high relative price spread. This is another effect of solar pv. The mean price may be low, but due to the large differences between zones in terms of installed capacity of solar pv this can cause high price spreads.
 
 
 This concludes the second post on the "year in review" series. The next parts will focus on market revenues within CORE and zoom in on the Netherlands. Furthermore, soon the TenneT Annual Market update will be published in which some of my indicators will be used. Stay tuned on my linkedin for updates!
