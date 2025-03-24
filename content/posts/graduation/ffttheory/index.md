@@ -32,7 +32,7 @@ This $W^{nk}_{N}$ is called the *twiddle factor*. More on this below.
 For implementing the DFT of size $N$, in which $N$ is a power of 2, the *Fast Fourier Transform* (FFT) is used[1]. This *divide and conquer* type algorithm recursively breaks up the DFT into 2 smaller DFT's per iteration of size $N=N_1N_2$, in which $N_1$ and $N_2$ are also a power of two. This reduces the complexity from $\mathcal{O}(N^2)$ to $\mathcal{O}(N\cdot log_2\cdot N)$. This pattern can then be written out in so called *stages* of *butterflies*.  
 The FFT is calculated in a series of these stages, with total number stages  $S=log_r(N)$, as can be seen for example in the figure below (taken from [2]). The $r$ here is called the *base of the radix* and is also the number of inputs to each knot in the graph, so the figure corresponds to *radix-$2$*. The pattern of crossing wires in the flow diagram are named butterflies. The most simple butterfly can be observed near the output at the right of the flow diagram, everything left of it are interleaved butterflies. The number of inputs of each knot is equal to the radix base $r$, in this example 2. Then each butterfly (consisting of two of these knots) with input pair $A,B$ calculates $A+B,A-B$ as two outputs. So each bottow line of the butterfly is multiplied with $-1$, which is not shown in the diagram.     
 Each number in the flow diagram represents a complex rotation $\phi$ as defined in equation 2. These rotation factors are called twiddle factors or twiddles. It follows that there is no rotation needed for $\phi=0$ and for $\phi=[N/4,N/2,3N/4]$ the rotations are trivial: $W^\phi_N=[1,-j,-1,j]$. These trivial rotations can be executed by swapping the real and complex components.  
-{{< figure src="img/radix2-flowdiagram.png" caption="radix-$2$ flow diagram for $N=16$ , taken from [2]" >}}
+{{< figure src="radix2-flowdiagram.png" caption="radix-$2$ flow diagram for $N=16$ , taken from [2]" >}}
 
 ### DIF and DIT
 
@@ -40,20 +40,20 @@ There are actually two ways to use the optimization of the FFT. These are called
 The way the butterflies are defined means that any FFT will reshuffle the order of samples in a way that corresponds to the bit reversing of the indices. Lets look at a small example. For an FFT of size $N=16$ the indices are bitwise expressed in $\log_2{(N)}=4$ bits. A sample at index $2$ is "0010" in binary, reversed this is "0100" which is $4$ in decimal. So in other words a sample with index 2 ends up at index 4. The difference between DIT and DIF is that with DIF the input samples are in natural order, but the output samples are in *bit reversed order*. With DIT this is the other way around.
 
 The above figure is an example of DIF, which can be recognized in the order of output indices that are shown. In terms of flow diagram DIF starts splitting the DFT according to the FFT algorithm into two parts from the end of the sample stream. This is illustrated in the figure below, for a small FFT of size $N=8$:
-{{< figure src="img/flow-DIF.png" caption="flow diagram DIF FFT $N=8$, taken from [2]" >}}
+{{< figure src="flow-DIF.png" caption="flow diagram DIF FFT $N=8$, taken from [2]" >}}
 In contrast, the DIT starts splitting the DFT from the beginning of the sample stream, as illustrated in below figure.
-{{< figure src="img/flow-DIT.png" caption="flow diagram DIT FFT $N=8$, taken from [2]" >}}
+{{< figure src="flow-DIT.png" caption="flow diagram DIT FFT $N=8$, taken from [2]" >}}
 The consequence of this is the aforementoined sample ordering, *natural order* input -> *bit reversed* output for DIF and *bit reversed order* input -> *natural order* output for DIT. The above figures also mean that that the flow diagrams of the DIF and the DIT are the *transpose* of eachother. This is important for the actual implementation, described in later parts.
 
 An example of a higher radix is shown in the figure below, which depicts a radix-$4$ flow [3]. One butterfly in radix-$4$ can be seen as a rewritten double radix-$2$ butterfly. This results in a reduction of multiplications by 25\% and an increase in the number of additions with 50\%, as proven in [4] and measured in [3]. From dataflow programming mapping to dsp slices in the FPGA, it follows that for every adder there is also a multiplier present. So a trade-off of less multiplications but more additions does not have any actual gain in our programming model. Therefor radix-$2$ is the chosen FFT type.
-{{< figure src="img/radix4-flowdiagram.png" caption="radix-$4$ flow diagram for $N=8$, taken from [3]" >}}
+{{< figure src="radix4-flowdiagram.png" caption="radix-$4$ flow diagram for $N=8$, taken from [3]" >}}
 
 ### Radix-$2^2$
 The series of stages of radix-$2$ can be further optimized. Rewriting the twiddle factors by splitting all non trivial rotations $\phi$ into a trivial and non trivial part $\phi'$ results in the following expression:
 
 $$Ae^{-j\dfrac{2\pi}{N}\phi'}\pm Be^{-j\dfrac{2\pi}{N}(\phi'+N/4)}=[A\pm(-j)B]\cdot e^{-j\dfrac{2\pi}{N}\phi'} \tag{4}$$
 in which A and B are the inputs of the butterfly and $\phi'=\phi$ mod $N/4$. In the resulting expression the bracketed part has only a trivial rotation. This is then rotated with a non trivial angle. In practice this is used to move the non trivial part to the next stage for all odd stages, as depicted in the figure below. This method reduces the total number of non trivial rotations in the flow graph at the expense of a slighter more complex control circuit.
-{{< figure src="img/radix22-flowdiagram.png" caption="Radix-$2^2$ DIF flowdiagram, taken from [5], only the rotation angles have changed with respect to previous radix-$2$ flowdiagram" >}}
+{{< figure src="radix22-flowdiagram.png" caption="Radix-$2^2$ DIF flowdiagram, taken from [5], only the rotation angles have changed with respect to previous radix-$2$ flowdiagram" >}}
 
 # FFT Implementation Architecture
 For the actual implementation architecture of the FFT there are two main choices to be made. The sample flow direction: feed forward only or with feedback, and the amount of inputs: serial or parallel. The four possibilities out of these two choices are called Single-path Delay Feedback (SDF), Multi-path Delay Feedback (MDF), Single-path Delay Commutator (SDM) and Multi-path Delay Commutator (MDC) architectures class for serial feedback, parallel feedback, serial feed forward and parallel feed forward respectively.  

@@ -2,13 +2,15 @@ baseURL = "https://boerman.dev/"
 languageCode = "en-us"
 title = "Blog Frank Boerman"
 theme = "terminal"
-paginate = 10
 staticDir = ["static"]
 enableEmoji = true
 
 [markup.goldmark.renderer]
 # allow inclusion of html in posts. Its a personal blog that is statically compiled so its not needed to prevent this
 unsafe=true
+
+[pagination]
+pagerSize = 10
 
 [params]
   #ping = "http://localhost:5000"
@@ -26,7 +28,7 @@ unsafe=true
   [languages.en]
     title = "FJL Boerman Blog"
     subtitle = "A gathering of thoughts and personal projects"
-    copyright = "Frank Boerman 2019-2024"
+    copyright = "Frank Boerman 2019-2025"
     menuMore = "Read More"
     readMore = "Read More"
     readOtherPosts = "Read more posts"

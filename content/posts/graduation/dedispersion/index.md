@@ -16,19 +16,19 @@ The two models presented in part 1 with equation (2) and (4) can each be used as
 In the first method (so called in-coherent de-dispersion) the time shift per frequency channel is calculated with (2). Then this time shift is applied to the whole channel time series. This successfully removes the dispersion between the channels. The advantage of this method is that it has a relatively low computational intensity, which is an important factor due to the scale of pulsar observations. The disadvantage of this is that only the dispersion *between* the channels is negated, but there is still dispersion left *within* the channel. Especially for low frequencies and/or high $DM$'s this dispersion can still be very significant [1].  
 
 In the second method (so called coherent de-dispersion) the transfer function of (4) is used. Here the input signal is convolved in the time domain with the inverse of the transfer function (4). Since this is a phase only filter this convolution needs to be done on the complex input signal, so before the traditional squaring of the signal done by telescope systems, due to needing the phase information. Using the Convolution theorem [[wiki]](https://en.wikipedia.org/wiki/Convolution_theorem) convolution in the time domain is element wise multiplication in the frequency domain. So the high level flow of coherent de-dispersion then becomes:
-{{< figure src="img/dedispersionflow.svg" caption="Coherent de-dispersion flow diagram" >}}
+{{< figure src="dedispersionflow.svg" caption="Coherent de-dispersion flow diagram" >}}
 In general coherent de-dispersion is more computational and hardware intensive. Both in higher data rate due to needing the full complex signal, as well as computational intensity due to using convolution instead of simple multiplication in time domain.
 
 # Pulsar search
 Now lets take a step back and look at the ultimate goal: searching for pulsars. Summarizing from part 1, pulsars are fascinating objects and very valuable for physics research. Observations of them are hampered by the effect of frequency dispersion. This dispersion can be modelled and removed with help of these models. However these require knowing the correct parameter $DM$ for a certain observation. This is not known beforehand and its possible range is vast. Therefor a big part of pulsar search in terms of de-dispersion converges on brute forcing many trails of $DM$'s to find the correct one, if there is a radio pulsar present in the data.  
 These $DM$ trails are completely independent of each other and over large ranges. There are some proven bounds on the possible range of $DM$ depending on the direction in the galaxy[3], but the search space is very large, depending on the step size between trails. In the below figure the $DM$'s of known pulsars are plotted versus their rotation period $P(s)$. It's colors correspond to different projects that discovered these radio pulsars. Both axis are a logarithmic scale, showing the vast range of possibilities.
-{{< figure src="img/dm-spread.png" caption="Spread of $DM$ of known radio pulsars with their rotation period $P(s)$" >}}
+{{< figure src="dm-spread.png" caption="Spread of $DM$ of known radio pulsars with their rotation period $P(s)$" >}}
 
 Doing one $DM$ trail reveals nothing about the direction of the correct $DM$. If it is close to the correct one it *is* possible to see some pulse emerging, it can not be seen  if the $DM$ should be higher or lower. To see if the trail has succeeded can be done by visual tools or by automated systems. This *pulsar candidate selection* is in itself a huge field of research, which this project will not touch. Recent advancements include for example the use of neural networks [2].  
 
 The two main methods of de-dispersion each have their own trade-off. Coherent is more accurate but more computational intensive, incoherent vice versa. Combining these can help negate their draw backs. By using coarse grained trails of incoherent de-dispersion and then switching to fine grained de-dispersion when a pulse seems emerging the drawbacks of the two models can be negated. This is called semi-coherent approach.  
 Below figure shows the smearing due to the combined effects of dispersion within a channel, finite time resolution, and finite DM steps over the full band-width, as a function of DM. Taken from figure 3 in [4]. This illustrates the combined coarse and fine grained de-dispersion, which results in the seawaves like line of semi-coherent. This shows that by combining the methods, de-dispersion can be performed, with less computational intensity.  
-{{< figure src="img/semi-coherent.png" caption="smearing in semi-coherent dedispersion (figure 3 from [4])" style="width:75%" >}}  
+{{< figure src="semi-coherent.png" caption="smearing in semi-coherent dedispersion (figure 3 from [4])" style="width:75%" >}}  
 This project will further focus on the computational intensitive coherent de-dispersion and its performance.
 
 
@@ -78,7 +78,7 @@ To see how the algorithm works a high level simulation was performed. For such a
 The author of [4] has supplied a program to generate a pulsar signal in the same format as real observations. This was used to generate test data by taking this input signal and convolving the entire input signal with a generated inverse chirp function. *Inverse chirp function* means that the frequency dispersion effect is *applied* instead of *removed*, in other words the result is a dispersed signal for a de-dispersion method. This data is used as input to the high level simulation.  
 
 In the figure below the dataflow graph of the high-level simulation is plotted.  
-{{< figure src="img/high_level_sim.svg" caption="Dataflow graph of high level simulation of coherent dedispersion algorithm" >}}  
+{{< figure src="high_level_sim.svg" caption="Dataflow graph of high level simulation of coherent dedispersion algorithm" >}}  
 In this graph each token holds a vector representing a block of data of complex values. A short description of all the nodes:  
 The src outputs the $n_c$ blocks of size $NN$  
 The $ovlp$ node then adds overlap of size $n_d$ samples and outputs tokens holding vectors of size $N\_{bin}$  
@@ -90,7 +90,7 @@ The $ifft$ node converts the block $n^i_c$ back to the time domain by inverse FF
 Lastly the $unpd$ node removes the padding and the $snk$ appends the resulting blocks of size $NN$ together to form the final output
 
 The result from a simulation run is plotted in the figure below. This is an example with aforementioned test data and parameters. Thus the $DM$ is already the correct one and this is done for one channel.
-{{< figure src="img/sim_high_level_result.svg" caption="Output of high level simulation" >}}  
+{{< figure src="sim_high_level_result.svg" caption="Output of high level simulation" >}}  
 The blue peaks are the simulation results. It can be seen that although these are at the same position as the green original signal, they sometimes vary in magnitude with respect to the original green signal. This is due to the effects of splitting the signal into blocks for de-dispersion, in combination with the generation method of the test data, which is not a fully realistic model. This method was explained earlier.
 
 [//]: # (TODO: this should also be added to this part)
