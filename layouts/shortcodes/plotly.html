@@ -3,9 +3,15 @@
 <figure class="center" style="width: 100%;">
 <div id="{{$json}}" class="plotly" style="height:{{$height}}"></div>
 <script>
-Plotly.d3.json({{$json}}, function(err, fig) {
-    Plotly.plot('{{$json}}', fig.data, fig.layout, {responsive: true});
-});
+    fetch({{$json}})
+    .then(response => response.json())
+    .then(fig => {
+        Plotly.newPlot('{{$json}}',
+                fig.data, fig.layout, {responsive: true});
+    })
+    .catch(error => {
+        console.error('Error loading the JSON:', error);
+    });
 </script>
 <figcaption class="center">{{ .Get "caption" | safeHTML }}</figcaption>
 </figure>
