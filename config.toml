@@ -1,7 +1,6 @@
 baseURL = "https://boerman.dev/"
 languageCode = "en-us"
 title = "Blog Frank Boerman"
-theme = "terminal"
 staticDir = ["static"]
 enableEmoji = true
 
@@ -11,6 +10,10 @@ unsafe=true
 
 [pagination]
 pagerSize = 10
+
+[module]
+[[module.imports]]
+  path = 'github.com/panr/hugo-theme-terminal/v4'
 
 [params]
   #ping = "http://localhost:5000"
@@ -26,12 +29,13 @@ pagerSize = 10
 
   [languages]
   [languages.en]
-    title = "FJL Boerman Blog"
-    subtitle = "A gathering of thoughts and personal projects"
-    copyright = "Frank Boerman 2019-2025"
-    menuMore = "Read More"
-    readMore = "Read More"
-    readOtherPosts = "Read more posts"
+    [languages.en.params]
+      title = "FJL Boerman Blog"
+      subtitle = "A gathering of thoughts and personal projects"
+      copyright = "Frank Boerman 2019-2025"
+      menuMore = "Read More"
+      readMore = "Read More"
+      readOtherPosts = "Read more posts"
 
     [languages.en.params.logo]
       logoText = "FBoerman"
