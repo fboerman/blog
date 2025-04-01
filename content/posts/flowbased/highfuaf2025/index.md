@@ -1,7 +1,7 @@
 ---
 title: 'Flowbased: how the markets can fluctuate, 2025 Q1 vs 2024 Q1'
 date: 2025-03-31
-description: 'A look at Flowbased domain trends, by comparing the first quarter of 2024 and 2025'
+description: 'A look at Flowbased domain trends, specifically the rise of forecasted commercial exchanges outside CORE in France,  by comparing the first quarter of 2024 and 2025'
 plotly: true
 scientific: true
 ---
