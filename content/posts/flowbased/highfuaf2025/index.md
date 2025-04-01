@@ -36,9 +36,9 @@ Now from figure 3 we can see that the $F_{uaf}$ is relatively large. To put this
 
 So what can possibly cause this increase? That is a complicated question to answer with only public data. The forecast is based on forecasted net positions of other zones and mapped with non public PTDF (sensitivity) numbers to the constraints. This requires a more deep dive on TSO side in their data. It does however explain why the RAM has decreased for RTE and why thus their constraints show up more as limiting the market.  
 
-Having said that, we can take some educated guesses if we zoom in further. In table 1 below, all network elements for RTE in the presolve domain are listed for the first quarter in both 2024 and 2025.  
+Having said that, we can take some educated guesses if we zoom in further. In table 1 below, all network elements for RTE in the presolved domain are listed for the first quarter in both 2024 and 2025. This is presolved domain so bigger then only the active constraints.    
 What is most interesting here, is that the elements with the highest average $F_{uaf}$ in 2025, didn't exist in 2024 in the domain! These are Creys-st-Vulbas-Ouest No 1 and 2. These  also have a high occurence count to begin with.  
-A quick google search learns us that these are located close to the French Italian border, with Italy being outside of CORE. These constraints were probably added after RTE needed to apply large capacity reductions through the validation phase (IVA) in spring '24, due to high west-east export flows. Adding network elements as constraints is the normal way to deal with such situations instead of applying mass IVA's. They do however show that such southern european flows can have a large impact on the Flowbased domain of the whole of CORE. Integrating the Italy North bidding zone in the new Central CCR, currently being designed, will enable better management of these flows. They will then be inside the CCR (and thus the Flowbased domain) and can be more efficiently allocated into the RAM, instead of being reserved in the forecast called $F_{uaf}$.
+A quick google search learns us that these are located close to the French Italian border, with Italy being outside of CORE. These constraints were probably added after RTE needed to apply large capacity reductions through the validation phase (IVA) in [spring '24](https://www.jao.eu/sites/default/files/news_media/RTE%20-%20French%20eastern%20borders_situation%20update%20on%2020th%20June%202024.pdf), due to high west-east export flows. Adding network elements as constraints is the normal way to deal with such situations instead of applying mass IVA's. They do however show that such southern european flows can have a large impact on the Flowbased domain of the whole of CORE. Integrating the Italy North bidding zone in the new Central CCR, currently being designed, will enable better management of these flows. They will then be inside the CCR (and thus the Flowbased domain) and can be more efficiently allocated into the RAM, instead of being reserved in the forecast called $F_{uaf}$.
 
 This conclusion does not explain the (more modest) increase in $F_{uaf}$ on the Ensdorf - Vigy lines, which are on the north French - German border. However they have much lower occurences and are thus less to blame for the rising statistics that we looked at earlier.
 
@@ -67,6 +67,13 @@ This section provides some extra background and context for those interested.
 We started with the observation of low RAM for the active constraints of RTE and TransnetBW. But when comparing in a broader context of presolved constraints  are they a really that much lower? The answer is yes, especially compared to the same quarter in 2024. In figure 5 below the average RAM of the presolved constraints are shown per TSO. RTE and TransnetBW are indeed the lowest and RTE shows a large drop compared to 2024 Q1.
 
 {{<plotly json="fig_presolved_ram.json" height="400px" caption="Figure 5: Average RAM per TSO, presolved domain only" >}}
+
+### 70% rule
+Some people might be surprised by such low RAM and state that they thought it had to be minimum 70% (before any validation subtractions or action plans apply). This is a subtle but very important mistake in interpreting the legislation.  
+The "70% rule" comes from the EU Clean Energy Package, which indeed stipulates that 70% of physical capacity has to be made available for *cross zonal trade*. The only exception to this is if a TSO can prove it will endanger operational security.  
+*Margin Available Cross Zonal Trade* (MACZT) has two parts, and this is where the confusion comes in. The main equation is:
+$$ RAM + F_{uaf} \ge 0.7 \cdot F_{max} $$
+So this fits with the above story, high $F_{uaf}$ still satisfies the 70% rule, in fact it lowers the required minimum RAM!
 
 ## Appendix
 Appendix A is the same as figure 1 but then for 2024 Q1.
