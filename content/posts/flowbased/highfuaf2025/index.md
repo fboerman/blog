@@ -15,24 +15,24 @@ These are legitimate process steps to take, but show the impact of southern Euro
 So lets take a look at the shifting market trends mentioned. Figure 1 below shows the statistics per TSO for the Flowbased active constraints. The x axis shows the share of hours in which a TSO had at least one, the y axis shows the average capacity released within Core (RAM, as a % of maximum capacity of a constraint). The size is the average shadow price, which is a measure of how much it limited the welfare of the market. It is shown for all businessdays in the first quarter of 2025.  
 If you are not familiar with each TSO, you can consult [this page of ENTSOE to check](https://www.entsoe.eu/about/inside-entsoe/members/).
 
-{{<plotly json="fig_scatter_active_2025.json" height="400px" caption="Figure 1: FB Core Active Constraint statistics for 2025 Q1 (Check appendix A for 2024Q1)" >}}
+{{<plotly json="fig_scatter_active_2025.json" height="500px" caption="Figure 1: FB Core Active Constraint statistics for 2025 Q1 (Check appendix A for 2024Q1)" >}}
 
 What stands out here are the two TSOs with fairly low average capacities on active constraints: TransnetBw and RTE.  
 Active constraints are heavily dependant on grid situation and market direction. For some TSOs this statistic moves wildly, while others are pretty stable. In figure 2 the change between figure 1 and the same statistics of one year before are shown for some TSOs. Here we can see that while TransnetBW barely moved, RTE and CEPS moved to a much higher share of time and lower average capacities.
 
-{{<plotly json="fig_moved_ac.json" height="400px" caption="Figure 2: Change in FB Core Active Constraint statistics for some TSOs" >}}
+{{<plotly json="fig_moved_ac.json" height="500px" caption="Figure 2: Change in FB Core Active Constraint statistics for some TSOs" >}}
 
 So what could explain such lower capacities on active constraints? Partially this is due to various grid changes and changing market directions. We are looking at averages here, so which elements are active is hidden, more on this later. If the market moves in a fundamentally different direction all the time, it will hit very different constraints with different properties. But for RTE there is something else going on as well: there is a very high increase of forecasted flows from *outside* of the Core region, the so called $F_{uaf}$, which eats up the capacity available *inside* the Core region.  
 To show this, lets look at a breakdown of how the RAM is calculated. This is shown in figure 3. It looks a bit technical at first but will be explained below the figure. For more details and formulas underlying this please consult the [Core CCM](https://eepublicdownloads.entsoe.eu/clean-documents/nc-tasks/Core%20-%20ANNEX%20I_III.pdf).  
 Presolved here means to mathematically filter only the constraints that are actually limiting the capacity domain.
 
-{{<plotly json="fig_waterfall_ram_rte_2025.json" height="400px" caption="Figure 3: Breakdown of the components of RAM, each bar is average number over all presolved constraints for RTE in Q1 2025" >}}
+{{<plotly json="fig_waterfall_ram_rte_2025.json" height="500px" caption="Figure 3: Breakdown of the components of RAM, each bar is average number over all presolved constraints for RTE in Q1 2025" >}}
 
 From left to right the waterfall shows how the final RAM is build up. We start at the thermal capacity $F_{max}$ then we subtract an error margin of 10% (FRM). Next we subtract two flows that we cannot influence inside our region: flows that exist without any commercial exchange and are just there, $F_{0all}$, and forecasted commercial flows from outside of our region, $F_{uaf}$. Then we add up the virtual capacity coming from the 70% rule (AMR) and finally subtract individual validation adjustments for grid security (IVA). Then we arrive at our RAM!
 
 Now from figure 3 we can see that the $F_{uaf}$ is relatively large. To put this in perspective figure 4 shows the average $F_{uaf}$ for all TSO's for both 2024 and 2025 Q1. Here we can see that it has shot up from 6.57% to 31.16% for RTE!
 
-{{<plotly json="fig_presolved_fuaf.json" height="400px" caption="Figure 4: Average Forecasted Commercial Exchanges Outside Core, presolved domain only" >}}
+{{<plotly json="fig_presolved_fuaf.json" height="500px" caption="Figure 4: Average Forecasted Commercial Exchanges Outside Core, presolved domain only" >}}
 
 So what can possibly cause this increase? That is a complicated question to answer with only public data. The forecast is based on forecasted net positions of other zones and mapped with non public PTDF (sensitivity) numbers to the constraints. This requires a more deep dive on TSO side in their data. It does however explain why the RAM has decreased for RTE and thus why their constraints show up more as limiting the market.  
 
@@ -66,7 +66,7 @@ This section provides some extra background and context for those interested.
 ### Low RAM in context
 We started with the observation of low RAM for the active constraints of RTE and TransnetBW. But when comparing in a broader context of presolved constraints  are they a really that much lower? The answer is yes, especially compared to the same quarter in 2024. In figure 5 below the average RAM of the presolved constraints are shown per TSO. RTE and TransnetBW indeed have the lowest RAMs and RTE shows a large drop compared to 2024 Q1.
 
-{{<plotly json="fig_presolved_ram.json" height="400px" caption="Figure 5: Average RAM per TSO, presolved domain only" >}}
+{{<plotly json="fig_presolved_ram.json" height="500px" caption="Figure 5: Average RAM per TSO, presolved domain only" >}}
 
 ### 70% rule
 Some people might be surprised by such low RAM and state that they thought it had to be at minimum 70% (before any validation subtractions or action plans apply). This is a subtle but very important mistake in interpreting the legislation.  
@@ -77,8 +77,8 @@ So this fits with the above story, high $F_{uaf}$ still satisfies the 70% rule, 
 
 ## Appendix
 Appendix A is the same as figure 1 but then for 2024 Q1.
-{{<plotly json="fig_scatter_active_2024.json" height="400px" caption="Appendix A: FB Core Active Constraint statistics for 2024 Q1" >}}
+{{<plotly json="fig_scatter_active_2024.json" height="500px" caption="Appendix A: FB Core Active Constraint statistics for 2024 Q1" >}}
 
 Appendix B is the same figure 3 but then for 2024 Q1.
-{{<plotly json="fig_waterfall_ram_rte_2024.json" height="400px" caption="Appendix B: Breakdown of the components of RAM, each bar is average number over all presolved constraints for RTE in Q1 2024" >}}
+{{<plotly json="fig_waterfall_ram_rte_2024.json" height="500px" caption="Appendix B: Breakdown of the components of RAM, each bar is average number over all presolved constraints for RTE in Q1 2024" >}}
 
