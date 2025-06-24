@@ -1,0 +1,6 @@
+<details>
+    <summary><a><u>Details: {{ .Get "title" | default "Click to expand" | markdownify }}</u></a></summary>
+	<div class="summarytext">
+		{{ .Inner | markdownify }}
+	</div>
+</details>
