@@ -4,6 +4,7 @@ date: '2025-07-14'
 description: 'It has been talked about for quite some time and the European Commission is also looking into it now. An opinion post about why I am in favor of reforming SDAC into having a Single Market Coupling Operator (SMCO)'
 plotly: false
 scientific: false
+draft: true
 ---
 
 Recently most of my posts are more explanatory and based on data analysis and visualization. While I enjoy creating them, one of the reasons I started this blog is to also share more of my own thoughts and opinions. So today I will write a first opinion piece on some of my personal opinion surrounding the organization of the coupled markets in the EU, SDAC and SIDC. This post is thus more opinion based instead of purely fact based. If you disagree I would love to hear from you!  
