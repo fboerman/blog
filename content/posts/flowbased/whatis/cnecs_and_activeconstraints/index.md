@@ -1,6 +1,6 @@
 ---
 title: 'Flowbased Tutorial: CNECs and Active Constraints and how to analyse them'
-date: 2025-11-17
+date: 2025-11-18
 description: 'A short explanation on some of the key concepts of flowbased, how does the domain look like and what are CNECs and active constraints? And how can you analyse them?'
 plotly: false
 scientific: true
