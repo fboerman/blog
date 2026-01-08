@@ -1,10 +1,10 @@
 ---
 title: 'Using my new datalake in practise: a case study'
-date: 2026-01-06
+date: 2026-01-08
 description: 'I am opening up my datalake as a commercial offering. This post shows a case study on how it can be used for analysis. Specifically this post looks at a specific CNEC which became more often an active constraint in the last quarter of 2025'
 plotly: true
 ---
-I have received many requests over the years for people wanting to use my private databases. I have always wanted to open it up but until recently, never got around to setting up proper security and organisation. Now I have and my new Amun Analytics Datalake is [live in beta mode](https://ui.dl.amunanalytics.eu/)!  
+I have received many requests over the years for people wanting to use my private databases. I have always wanted to open it up but, until recently, never got around to setting up proper security and organisation. Now I have and my new Amun Analytics Datalake is [live in beta mode](https://ui.dl.amunanalytics.eu/)!  
 You can register and login through the new Amun Single Sign On. After this you need to contact me through email or linkedin chat to ask to activate your account (this is still a manual action for now). 
 
 You can already checkout the table catalog while you are waiting. Usage will be free while in beta mode, but I am planning on making this a commercial venture, with a reasonable monthly fee. The fee will be per company which then allows in principle unlimited usage (I will enforce a fair use policy at the start to not blow up my server though). If you are interested in buying such a service, and/or have ideas for other datasets to include, I would love to hear from you at [frank@amunanalytics.eu](mailto:frank@amunanalytics.eu)!  
@@ -12,8 +12,8 @@ You can already checkout the table catalog while you are waiting. Usage will be 
 Please note that my datalake is a product of **convenience**. There is <u>only public data</u> and some calculations using public data in it. Requests for confidential information will get you banned from my service forever.
 
 # How to use the datalake
-After activation you can download ready to go python or R code to help you get started. This code includes a way to retrieve an Oauth access token and how to then query the datalake through a Trino query engine.  
-There are 2 ways to use the datalake. Since the datalake is build on Apache Iceberg, you can directly query the Iceberg REST catalog at [https://keeper.dl.amunanalytics.eu/catalog/](https://keeper.dl.amunanalytics.eu/catalog/), this also uses Oauth JWT authentication. This allows you to use for example pyiceberg.  
+After activation you can download ready to go python or R code to help you get started. This code includes a way to retrieve an Oauth access token and how to then query the datalake with SQL through the Trino query engine.  
+There are 2 ways to use the datalake. Since the datalake is build on Apache Iceberg, you can directly query the Iceberg REST catalog at [https://keeper.dl.amunanalytics.eu/catalog/](https://keeper.dl.amunanalytics.eu/catalog/), this uses Oauth JWT authentication. This allows you to use for example the pyiceberg package.  
 The second, and easier method, is to use SQL to query the datalake. This also uses Oauth JWT authentication and is the method used in the example code. This allows you to directly query the datalake and filter/calculate the data you need. Currently you need to query through a Trino connection but in the future I am planning to also support a postgres connection.  
 If some or all of these terms are unknown to you, simply checkout the ready to go example code from the webpage or follow the instructions below the case study in this post. This should help you to get started using the datalake. If you are stuck feel free to contact me at [frank@amunanalytics.eu](mailto:frank@amunanalytics.eu) or linkedin chat!
 
@@ -67,14 +67,14 @@ Lets move on to the PTDFs. To get a single indicator we can look at the largest 
 
 For this indicator, higher max Z2Z PTDF would signal network causes, as it points to this CNEC being much more sensitive. Again this shows a relative volatile picture, but not a clear increasing trend that the constraint has become much more sensitive.
 
-The combination of these indicators shows that it is unlikely that changes in the flowbased domain have caused the uptick in this CNEC being more often limiting the market. This leaves market fundamentals. Gábor Szatmári of Montel [published a linkedin post](https://www.linkedin.com/posts/g%C3%A1bor-szatm%C3%A1ri-0775a044_hu-deat-hu-spread-in-q4-activity-7407448570364313600-4q4h?utm_source=share&utm_medium=member_desktop&rcm=ACoAACc-79sB2aDopScZHfFvJ6YScRgJY8SAZWU) that showed the most likely answer. A strong change in market fundamentals drove different market directions.
+The combination of these indicators shows that it is unlikely that changes in the flowbased domain have caused the uptick in active constraint occurence for this CNEC. This leaves market fundamentals. Gábor Szatmári of Montel [published a linkedin post](https://www.linkedin.com/posts/g%C3%A1bor-szatm%C3%A1ri-0775a044_hu-deat-hu-spread-in-q4-activity-7407448570364313600-4q4h?utm_source=share&utm_medium=member_desktop&rcm=ACoAACc-79sB2aDopScZHfFvJ6YScRgJY8SAZWU) that showed the most likely answer. A strong change in market fundamentals drove a change in market direction. This then results in a shift in which active constraints show up!
 
-This simple case study shows how you can quickly pull together some filtered data and check some basic indicators from the flowbased data. This enables you to quickly analyse Flowbased, which can help with understanding and working with Flowbased market coupling.
+This simple case study shows how you can quickly pull together some filtered data and check some basic indicators from the flowbased data. This enables you to quickly analyse Flowbased, which can help with understanding of, and working with, Flowbased market coupling.
 
-If you want to try it out, move over to [https://ui.dl.amunanalytics.eu/](https://ui.dl.amunanalytics.eu/), register an account and contact me for activation. If you are interested in getting a license for this to use it after the trail period, and/or have ideas on more datasets to include, contact me at [frank@amunanalytics.eu](mailto:frank@amunanalytics.eu)!
+If you want to try it out, move over to [https://ui.dl.amunanalytics.eu/](https://ui.dl.amunanalytics.eu/), register an account and [contact me](mailto:frank@amunanalytics.eu) for activation. If you are interested in getting a license for this to use it after the trail period, and/or have ideas on more datasets to include, contact me at [frank@amunanalytics.eu](mailto:frank@amunanalytics.eu)!
 
 # Running the code for the case study
-The code for this example case study is published in a notebook in [this github repo](https://github.com/fboerman/blog-notebooks). To easily run it yourself do the following:
+The code for this example case study is published in a notebook in [this github repo](https://github.com/fboerman/blog-notebooks). To easily run it yourself do the following, completely for free:
 1. Go to [https://colab.research.google.com/](https://colab.research.google.com/) and login with your google account. If you dont have one, register one for free
 1. After logging in it should show the "open notebook" menu. If not go to file -> open notebook
 1. Click "GitHub" on the left, paste in the repo url from above and press enter
@@ -82,6 +82,8 @@ The code for this example case study is published in a notebook in [this github 
 1. Now copy your username and token either from the example python code from the main site, or go to [https://ui.dl.amunanalytics.eu/getkey/](https://ui.dl.amunanalytics.eu/getkey/) to retrieve your token. Fill it in where it says "INSERT_YOUR_USERNAME_HERE" and "INSERT_YOUR_TOKEN_HERE"
 1. Click the "Run all" button at the top and see the code running. Click "Run anyway" if the warning popup comes up. First time it also installs the required packages, this can take a minute
 1. You can now inspect the code and play with it and see the outputs!
+
+If you are stuck feel free to contact me at [frank@amunanalytics.eu](mailto:frank@amunanalytics.eu)!
 
 Alternatively you can run the notebook in your local notebook environment. In that case simply download it from github and run in your environment. If you have jupyterlab installed or running a local notebook you can also authenticate through an Oauth weblink. Sadly google colab does not support this. To use this create a cell at the top and paste in below code:
 
