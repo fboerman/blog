@@ -1,11 +1,11 @@
 ---
 title: 'Using my new datalake in practise: a case study'
-date: 2026-01-08
-description: 'I am opening up my datalake as a commercial offering. This post shows a case study on how it can be used for analysis. Specifically this post looks at a specific CNEC which became more often an active constraint in the last quarter of 2025'
+date: 2026-01-12
+description: 'After many requests for this I am working on opening up my datalake as a commercial offering! Currently you can try it for free in the beta period. This post shows a case study on how it can be used for analysis. Specifically this post looks at a CNEC which became more often an active constraint in the last quarter of 2025'
 plotly: true
 ---
 I have received many requests over the years for people wanting to use my private databases. I have always wanted to open it up but, until recently, never got around to setting up proper security and organisation. Now I have and my new Amun Analytics Datalake is [live in beta mode](https://ui.dl.amunanalytics.eu/)!  
-You can register and login through the new Amun Single Sign On. After this you need to contact me through email or linkedin chat to ask to activate your account (this is still a manual action for now). 
+You can register and login through the new Amun Single Sign On. After this you need to contact me through email or LinkedIn chat to ask to activate your account (this is still a manual action for now). 
 
 You can already checkout the table catalog while you are waiting. Usage will be free while in beta mode, but I am planning on making this a commercial venture, with a reasonable monthly fee. The fee will be per company which then allows in principle unlimited usage (I will enforce a fair use policy at the start to not blow up my server though). If you are interested in buying such a service, and/or have ideas for other datasets to include, I would love to hear from you at [frank@amunanalytics.eu](mailto:frank@amunanalytics.eu)!  
 
@@ -23,7 +23,7 @@ Further technical architecture is provided at the end of this post. But first le
 Below text will go through the case study and show the sql queries. If you want to follow along with live code first read the "Running the code" part of the post below.  
 
 Recently I got a question about a specific CNEC which showed up much more in the active constraints overview. (If you don't know what a CNEC or active constraints is in Flowbased read [this post](https://boerman.dev/posts/flowbased/whatis/cnecs_and_activeconstraints/) first). The question is, is this because of a network change or a market change?  
-So the specific case here is that in my [daily reports](https://reports.coreflowbased.eu/members/) the CNE of "Altheim - Sittling 219" with Contingency "Altheim - Sittling 220" showed up more. This is an internal CNEC from TenneT Germany. So lets pull up all occurences of that CNEC being an active constraint for the last 4 months of 2024. This is done with query 1 below.
+So the specific case here is that in my [daily reports](https://reports.coreflowbased.eu/members/) the CNE of "Altheim - Sittling 219" with Contingency "Altheim - Sittling 220" showed up more. This is an internal CNEC from TenneT Germany. So lets pull up all occurrences of that CNEC being an active constraint for the last 4 months of 2024. This is done with query 1 below.
 <figure class="center" style="width:100%">
 <pre>
 select * from flowbased_dayahead.active_constraints
@@ -32,15 +32,15 @@ and cont_name = 'N-1 Altheim - Sittling 220'
 and business_day >= '2025-08-01'
 and business_day < '2025-12-31 23:59'
 </pre>
-<figcaption class="center">Query 1: Gather all occurences of specific CNEC for the last 4 months of 2024 in the Core Final Domain</figcaption>
+<figcaption class="center">Query 1: Gather all occurrences of specific CNEC for the last 4 months of 2024 in the Core Final Domain</figcaption>
 </figure>
 This pulls in all columns so we can scroll through it. You don't always need all columns, it is then advisable to list the ones you need.
  
-Now lets see if there can indeed be seen an increasing trend. In order to do this lets plot the average shadow price and number of occurences in figure 1 below.
+Now lets see if there can indeed be seen an increasing trend. In order to do this lets plot the average shadow price and number of occurrences in figure 1 below.
 
 {{< plotly json="fig_shadow_prices.json" height="500px" caption="Figure 1: Average shadow price and number of MTU's over time" >}}
 
-We can indeed see here an increasing trend of occurences and also an uptick in average shadow price from september onwards, compared to August. To answer the question if this can be caused by a network change we can check the two important indicators in the domain: RAM and PTDFs. Are there any specific changes in those?
+We can indeed see here an increasing trend of occurrences and also an uptick in average shadow price from september onwards, compared to August. To answer the question if this can be caused by a network change we can check the two important indicators in the domain: RAM and PTDFs. Are there any specific changes in those?
 
 First we gather the data from the final domain for this specific CNEC. This is done with query 2 below. As an example we use a different column to filter here then in the active constraints table.
 <figure class="center" style="width:100%">
@@ -52,7 +52,7 @@ and cont_name = 'Altheim - Sittling 220'
 and business_day >= '2025-08-01'
 and business_day < '2025-12-31 23:59'
 </pre>
-<figcaption class="center">Query 2: Gather all occurences of specific CNEC for the last 4 months of 2024 in the Core Final Domain</figcaption>
+<figcaption class="center">Query 2: Gather all occurrences of specific CNEC for the last 4 months of 2024 in the Core Final Domain</figcaption>
 </figure>
 
 First we calculate the worst case RAM per MTU (remember, each CNEC always has 2 entries per MTU, one for each direction!) and then we average this per business day. This results in figure 2 below.
@@ -67,7 +67,7 @@ Lets move on to the PTDFs. To get a single indicator we can look at the largest 
 
 For this indicator, higher max Z2Z PTDF would signal network causes, as it points to this CNEC being much more sensitive. Again this shows a relative volatile picture, but not a clear increasing trend that the constraint has become much more sensitive.
 
-The combination of these indicators shows that it is unlikely that changes in the flowbased domain have caused the uptick in active constraint occurence for this CNEC. This leaves market fundamentals. Gábor Szatmári of Montel [published a linkedin post](https://www.linkedin.com/posts/g%C3%A1bor-szatm%C3%A1ri-0775a044_hu-deat-hu-spread-in-q4-activity-7407448570364313600-4q4h?utm_source=share&utm_medium=member_desktop&rcm=ACoAACc-79sB2aDopScZHfFvJ6YScRgJY8SAZWU) that showed the most likely answer. A strong change in market fundamentals drove a change in market direction. This then results in a shift in which active constraints show up!
+The combination of these indicators shows that it is unlikely that changes in the flowbased domain have caused the uptick in active constraint occurrence for this CNEC. This leaves market fundamentals. Gábor Szatmári of Montel [published a linkedin post](https://www.linkedin.com/posts/g%C3%A1bor-szatm%C3%A1ri-0775a044_hu-deat-hu-spread-in-q4-activity-7407448570364313600-4q4h?utm_source=share&utm_medium=member_desktop&rcm=ACoAACc-79sB2aDopScZHfFvJ6YScRgJY8SAZWU) that showed the most likely answer. A strong change in market fundamentals drove a change in market direction. This then results in a shift in which active constraints show up!
 
 This simple case study shows how you can quickly pull together some filtered data and check some basic indicators from the flowbased data. This enables you to quickly analyse Flowbased, which can help with understanding of, and working with, Flowbased market coupling.
 
@@ -81,6 +81,7 @@ The code for this example case study is published in a notebook in [this github 
 1. After waiting a bit you should see an entry with "20260107_high_active_constraint.ipynb", click this
 1. Now copy your username and token either from the example python code from the main site, or go to [https://ui.dl.amunanalytics.eu/getkey/](https://ui.dl.amunanalytics.eu/getkey/) to retrieve your token. Fill it in where it says "INSERT_YOUR_USERNAME_HERE" and "INSERT_YOUR_TOKEN_HERE"
 1. Click the "Run all" button at the top and see the code running. Click "Run anyway" if the warning popup comes up. First time it also installs the required packages, this can take a minute
+1. If you want to see the query running and check how far it is along, go to the [Trino UI](https://trino.dl.amunanalytics.eu/).
 1. You can now inspect the code and play with it and see the outputs!
 
 If you are stuck feel free to contact me at [frank@amunanalytics.eu](mailto:frank@amunanalytics.eu)!
