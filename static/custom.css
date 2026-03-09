@@ -18,3 +18,7 @@
 .summarytext a {
   color: #1e40af;
 }
+
+th {
+    text-transform: none !important;
+}
