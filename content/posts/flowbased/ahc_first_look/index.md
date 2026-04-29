@@ -1,7 +1,7 @@
 ---
 title: 'Flowbased: AHC parallel run first quick look'
 date: 2026-04-29
-description: 'The Advanced Hybrid Coupling parallel run has finally launched, time to take a quick first look at the available data'
+description: 'The Advanced Hybrid Coupling parallel run has finally launched, time to take a quick first look at the available data!'
 plotly: true
 ---
 
@@ -21,7 +21,7 @@ In the current production setting the Standard Hybrid Coupling (SHC) is used. Th
 Now in an AHC setting non flowbased borders can be modelled as a _virtual hub_. This hub then has PTDFs in the same way as normal hubs and thus denotes a new dimension in the flowbased domain. This has two major consequences.  
 First the flows induced on these borders are no longer static forecasts, but depend on the export/import position of the virtual hub, _just like with any other hub_. This allows the earlier reserved capacity to move from the Fuaf (capacity outside CCR) to the RAM (capacity inside the CCR). Effectively you move the border inside your domain.  
 Second this results in the market algorithm (Euphemia) to optimize this hub, and choose its import/export position, the same as with all other hubs. Any flow induced by such a choice will be subtracted from the RAM just like with normal hubs. Compared to the SHC situation this means the algorithm now has the freedom to optimize all these hubs and their effects. This instead of that any choice of, for example, a HVDC  border does not load or relieve capacity somewhere else in the flowbased domain. This results in a much more efficient, and closer to the physical grid, allocation.  
-This all comes at the drawback of higher computational intensity. The addition of a new dimension in the flowbaed domain increases the complexity logarithmically. Luckily advancements in both the Core tooling and Euphemia has kept this manageble. 
+This all comes at the drawback of higher computational intensity. The addition of a new dimension in the flowbased domain increases the complexity exponentially. Luckily advancements in both the Core tooling and Euphemia has kept this manageble. 
 
 In the Core AHC design  most virtual hubs are located on the HVDC borders to the Nordic area. The Netherlands, Germany and Poland have these on their northern borders. On top of that two AC borders are also moved into AHC. These are the Polish-Lithuanian border and the Romenian-Bulgarian border. The Italian borders were not taken in, due to these being integrated in the new Central CCR in the future. The Spanish border is very small and is currently not planned to be converted to AHC.
 
